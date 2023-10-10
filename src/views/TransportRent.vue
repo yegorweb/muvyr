@@ -1,9 +1,9 @@
-<template>
-  <v-container>
-
-  </v-container>
-</template>
-
 <script setup>
 
 </script>
+
+<template>
+  <v-container>
+    Прокат
+  </v-container>
+</template>
