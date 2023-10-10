@@ -56,6 +56,18 @@ const routes = [
         name: 'Contacts',
         component: () => import(/* webpackChunkName: "home" */ '@/views/Contacts.vue'),
       },
+      {
+        path: '/admin',
+        name: 'Admin',
+        component: () => import('@/views/Admin/Index.vue'),
+        children: [
+          {
+            path: 'property-form',
+            name: 'PropertyForm',
+            component: () => import('@/views/Admin/PropertyForm.vue'),
+          }
+        ]
+      }
     ],
   },
 ]
