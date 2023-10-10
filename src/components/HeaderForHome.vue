@@ -1,10 +1,12 @@
 <script setup>
+import { useRouter } from 'vue-router';
 
+let router = useRouter()
 </script>
 
 <template>
     <div class="d-flex w-100 justify-space-between align-center">
-        <div class="d-flex align-center">
+        <div class="d-flex align-center cursor-pointer" @click="router.push('/')">
             <img src="@/assets/logo.svg" alt="">
             
             <span class="logo-text">МУВЫР</span>

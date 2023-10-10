@@ -1,5 +1,8 @@
 <script setup>
 import HeaderForHome from '@/components/HeaderForHome.vue'
+import { useRouter } from 'vue-router';
+
+let router = useRouter()
 </script>
 
 <template>
@@ -24,19 +27,19 @@ import HeaderForHome from '@/components/HeaderForHome.vue'
         </div>
 
         <div class="list gray-container d-flex flex-column">
-          <div>Дер. МУВЫР</div>
-          <div>МОЛОКО</div>
-          <div>ПРОКАТ</div>
-          <div>СВАДЬБЫ</div>
-          <div>ЭКСКУРСИИ</div>
-          <div>МЕРОПРИЯТИЯ</div>
-          <div>БРОНИРОВАНИЕ</div>
+          <div @click="router.push('/')">Дер. МУВЫР</div>
+          <div @click="router.push('/milk')">МОЛОКО</div>
+          <div @click="router.push('/transport-rent')">ПРОКАТ</div>
+          <div @click="router.push('/wedding')">СВАДЬБЫ</div>
+          <div @click="router.push('/excursions')">ЭКСКУРСИИ</div>
+          <div @click="router.push('/events')">МЕРОПРИЯТИЯ</div>
+          <div @click="router.push('/property-rent')">БРОНИРОВАНИЕ</div>
         </div>
       </div>
     </v-container>
   </div>
 </template>
-https://storage.yandexcloud.net/goroda-img/temp-plakat-city/video.mp4
+
 <style lang="scss">
 .wrapper {
   min-height: 100dvh;
