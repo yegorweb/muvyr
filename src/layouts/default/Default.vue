@@ -1,16 +1,19 @@
 <script setup>
+import Header from '@/components/Header.vue';
 </script>
+
 <template>
   <v-app>
-    <v-app-bar flat>
-      <v-app-bar-title>
-        Деревня Мувыр
-      </v-app-bar-title>
-    </v-app-bar>
-
-    <v-main>
-      <router-view />
-    </v-main>
+    <v-container>
+      <v-row>
+        <v-col>
+          <Header />
+          <v-main>
+            <router-view />
+          </v-main>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-app>
 </template>
 
