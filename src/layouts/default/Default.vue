@@ -4,16 +4,9 @@ import Header from '@/components/Header.vue';
 
 <template>
   <v-app>
-    <v-container>
-      <v-row>
-        <v-col>
-          <Header />
-          <v-main>
-            <router-view />
-          </v-main>
-        </v-col>
-      </v-row>
-    </v-container>
+    <Header />
+      <v-main>
+        <router-view />
+      </v-main>
   </v-app>
 </template>
-

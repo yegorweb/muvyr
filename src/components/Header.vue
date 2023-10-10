@@ -5,7 +5,7 @@
 <template>
     <v-app-bar elevation="0">
         <v-container>
-            <v-row class="justify-space-between align-center">
+            <div class="w-100 d-flex justify-space-between align-center">
                 <div class="d-flex align-center">
                     <img src="@/assets/logo.svg" style="height: 40px;" alt="">
                     
@@ -13,7 +13,7 @@
                 </div>
                 
                 <v-app-bar-nav-icon></v-app-bar-nav-icon>
-            </v-row>
+            </div>
         </v-container>
     </v-app-bar>
 </template>
