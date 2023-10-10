@@ -8,11 +8,53 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'Home',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+        name: 'Muvyr',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Muvyr.vue'),
+      },
+      {
+        path: '/excursions',
+        name: 'Excursions',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Excursions.vue'),
+      },
+      {
+        path: '/excursions',
+        name: 'Excursions',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Excursions.vue'),
+      },
+      {
+        path: '/transport-rent',
+        name: 'TransportRent',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/TransportRent.vue'),
+      },
+      {
+        path: '/property-rent',
+        name: 'PropertyRent',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/PropertyRent.vue'),
+      },
+      {
+        path: '/milk',
+        name: 'Milk',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Milk.vue'),
+      },
+      {
+        path: '/wedding',
+        name: 'Wedding',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Wedding.vue'),
+      },
+      {
+        path: '/events',
+        name: 'Events',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Events.vue'),
+      },
+      {
+        path: '/investors',
+        name: 'Investors',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Investors.vue'),
+      },
+      {
+        path: '/contacts',
+        name: 'Contacts',
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Contacts.vue'),
       },
     ],
   },
