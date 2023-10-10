@@ -1,12 +1,16 @@
+<script setup>
+</script>
 <template>
   <v-app>
-    <default-bar />
+    <v-app-bar flat>
+      <v-app-bar-title>
+        Деревня Мувыр
+      </v-app-bar-title>
+    </v-app-bar>
 
-    <default-view />
+    <v-main>
+      <router-view />
+    </v-main>
   </v-app>
 </template>
 
-<script setup>
-  import DefaultBar from './AppBar.vue'
-  import DefaultView from './View.vue'
-</script>
