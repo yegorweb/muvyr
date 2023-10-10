@@ -60,6 +60,11 @@ let form = reactive({
     price: null,
     images: '',
 })
+function submit() {
+    console.log(form);
+    console.log(previews.value);
+    console.log(blobImages);
+}
 </script>
 <template>
     <v-container>
@@ -94,7 +99,7 @@ let form = reactive({
         </v-row>
         <v-row class="d-flex">
             <v-col cols="12" md="4">
-                <v-btn> добавить афишу<span>*</span>
+                <v-btn> добавить фото
                     <v-dialog v-model="visibleCropperModal" activator="parent">
                         <v-row class="justify-center">
                             <v-col cols="12" md="8" lg="6">
@@ -113,8 +118,8 @@ let form = reactive({
                 </v-btn>
             </v-col>
         </v-row>
-        <v-row v-for="preview in previews" class="d-flex">
-            <v-col class="d-flex" cols="12" sm="6" md="4">
+        <v-row>
+            <v-col v-for="preview in previews" class="d-flex" cols="12" sm="6" md="4">
                 <v-img :src="preview" width="200" class="my-2">
                     <v-overlay :open-on-click="true" contained class="align-center justify-center" activator="parent">
                         <v-btn color="error" @click="deletePreview(preview)" icon>
@@ -122,6 +127,11 @@ let form = reactive({
                         </v-btn>
                     </v-overlay>
                 </v-img>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="12" class="d-flex justify-center">
+                <v-btn @click="submit">отправить</v-btn>
             </v-col>
         </v-row>
     </v-container>
