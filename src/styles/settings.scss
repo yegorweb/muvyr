@@ -8,3 +8,12 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+.ql-container {
+    height: fit-content !important;
+}
+body {
+    a {
+        color: black !important;
+        text-decoration: none;
+    }
+}
