@@ -62,9 +62,14 @@ const routes = [
         component: () => import('@/views/Admin/Index.vue'),
         children: [
           {
+            path: '',
+            name: 'Property',
+            component: () => import('@/views/Admin/Property.vue')
+          },
+          {
             path: 'property-form',
             name: 'PropertyForm',
-            component: () => import('@/views/Admin/PropertyForm.vue'),
+            component: () => import('@/views/Admin/PropertyForm.vue')
           }
         ]
       }

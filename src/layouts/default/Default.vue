@@ -22,6 +22,9 @@ let drawer = ref(false)
         <v-list-item class="cursor-pointer" prepend-icon="mdi-post" to="/excursions" exact :ripple="false">
           Экскурсии
         </v-list-item>
+        <v-list-item class="cursor-pointer" prepend-icon="mdi-post" to="/admin" exact :ripple="false">
+          Админ
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-main>
