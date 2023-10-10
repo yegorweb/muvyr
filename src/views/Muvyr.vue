@@ -4,6 +4,6 @@
 
 <template>
   <v-container>
-    Что такое Мувыр?
+    Главная страница
   </v-container>
 </template>
