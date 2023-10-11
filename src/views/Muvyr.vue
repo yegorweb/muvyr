@@ -70,8 +70,8 @@ let router = useRouter()
 }
 .title {
   padding: 16px;
-  line-height: 0.85;
-  font-family: 'Marmelad', cursive;
+  line-height: 1;
+  font-family: 'Dela Gothic One', cursive;
   user-select: none;
   font-size: clamp(1.75rem, -3.6029rem + 15.2941vw, 5rem);
   color: #FFFFFF;
