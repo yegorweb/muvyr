@@ -1,16 +1,26 @@
 <script setup>
+import { onMounted } from "vue";
+import { useProperty } from '../store/property'
 import { ref } from "vue";
-let cards = []
+
+let propertyStore = useProperty()
+
+let properties = ref([]);
+
+onMounted(async () => {
+    await propertyStore.getAllProperty();
+    properties.value = propertyStore.property
+})
 </script>
 
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12" md="4" v-for="card in cards">
+            <v-col cols="12" md="4" v-for="card in properties">
                 <v-card class="h-100 d-flex flex-column">
                     <v-col class="pa-0">
                         <div
-                            :style="`aspect-ratio: 1/1; background: url(${card.image[0]}) 50% 50% no-repeat; background-size: cover;`">
+                            :style="`aspect-ratio: 1/1; background: url(${card.images[0]}) 50% 50% no-repeat; background-size: cover;`">
                         </div>
                     </v-col>
 

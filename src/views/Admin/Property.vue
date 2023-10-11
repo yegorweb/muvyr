@@ -6,7 +6,7 @@ import { useProperty } from '../../store/property'
 let propertyStore = useProperty()
 
 onMounted(async () => {
-    await propertyStore.getAllProperty()
+  await propertyStore.getAllProperty();
 })
 </script>
 <template>
