@@ -53,7 +53,7 @@ let router = useRouter()
 .list > * {
   color: #fff;
   font-family: 'Marmelad';
-  font-size: clamp(1rem, -0.0294rem + 2.9412vw, 1.625rem);
+  font-size: clamp(1rem, 0.294rem + 2.9412vw, 1.625rem);
   cursor: pointer;
   line-height: 1.5;
   user-select: none;
