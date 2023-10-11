@@ -4,7 +4,6 @@ import { useProperty } from '../store/property'
 
 import { useRouter } from 'vue-router'
 
-import VueDatePicker from '@vuepic/vue-datepicker'
 import "@vuepic/vue-datepicker/dist/main.css";
 import BackButton from "@/components/BackButton.vue";
 
