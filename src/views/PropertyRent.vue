@@ -4,30 +4,12 @@ import { useProperty } from '../store/property'
 
 import { useRouter } from 'vue-router'
 
-import VueDatePicker from '@vuepic/vue-datepicker'
-import "@vuepic/vue-datepicker/dist/main.css";
 
 let propertyStore = useProperty()
 
 let router = useRouter()
 
 let properties = ref([]);
-let bookModal = ref(false)
-
-let bookForm = reactive({
-    email: '',
-    phone: '',
-    peopleCount: '',
-    startBooking: null,
-    endBooking: null
-})
-
-function sendRequest(property) {
-    bookForm.startBooking = new Date(bookForm.startBooking).toLocaleDateString()
-    bookForm.endBooking = new Date(bookForm.endBooking).toLocaleDateString()
-
-    propertyStore.bookProperty(bookForm, property)
-}
 
 onMounted(async () => {
     await propertyStore.getAllProperty();

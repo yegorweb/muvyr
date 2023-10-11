@@ -1,13 +1,31 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, reactive } from 'vue';
 import { useProperty } from '../store/property'
 import { useRouter } from 'vue-router';
 
-const router = useRouter()
+import VueDatePicker from '@vuepic/vue-datepicker'
+import "@vuepic/vue-datepicker/dist/main.css";
 
+const router = useRouter()
 const propertyStore = useProperty()
 
+let bookForm = reactive({
+    email: '',
+    phone: '',
+    peopleCount: '',
+    startBooking: null,
+    endBooking: null
+})
+
+let bookModal = ref(false)
 let property = ref({})
+
+function sendRequest() {
+    bookForm.startBooking = new Date(bookForm.startBooking).toLocaleDateString()
+    bookForm.endBooking = new Date(bookForm.endBooking).toLocaleDateString()
+
+    propertyStore.bookProperty(bookForm, property.value)
+}
 
 onMounted(async () => {
     property.value = await propertyStore.getById(router.currentRoute.value.query._id);
@@ -32,7 +50,67 @@ onMounted(async () => {
                 <div>
                     Цена: <b>{{ property.price }}</b>
                 </div>
+                Даты: <br />
+                <v-chip v-for="book in property.bookedBy" style="font-size: 17px;">
+                    <b>
+                        {{ book.startBooking }}
+                    </b>
+                    -
+                    <b>
+                        {{ book.endBooking }}
+                    </b>
+                </v-chip>
+                <div class="mt-6">
+                    <v-btn @click="bookModal = true">заказать</v-btn>
+                </div>
 
+                <v-dialog width="500" v-model="bookModal">
+                    <v-card title="Заказать" class="pa-4">
+                        <v-row>
+                            <v-col cols="12">
+                                Ваш email
+                                <v-text-field v-model="bookForm.email"></v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col cols="12">
+                                Телефон
+                                <v-text-field v-model="bookForm.phone"></v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col cols="12">
+                                Количество людей
+                                <v-text-field v-model="bookForm.peopleCount"></v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col cols="12">
+                                Начало бронирования
+                                <VueDatePicker locale="ru" v-model="bookForm.startBooking" class="mb-1"
+                                    minutes-grid-increment="2" input-class-name="dp-custom-input" placeholder="дата и время"
+                                    :transitions="{
+                                        open: 'fade',
+                                        close: 'fade',
+                                    }" />
+                            </v-col>
+                            <v-col cols="12">
+                                Конец бронирования
+                                <VueDatePicker locale="ru" v-model="bookForm.endBooking" class="mb-1"
+                                    minutes-grid-increment="2" input-class-name="dp-custom-input" placeholder="дата и время"
+                                    :transitions="{
+                                        open: 'fade',
+                                        close: 'fade',
+                                    }" />
+                            </v-col>
+                        </v-row>
+                        <v-row>
+                            <v-col>
+                                <v-btn @click="sendRequest">отправить</v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-card>
+                </v-dialog>
             </v-col>
         </v-row>
     </v-container>
