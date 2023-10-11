@@ -12,5 +12,8 @@ export default {
     },
     bookProperty(bookForm, property) {
         return $api.post('/property/book-property', { bookForm, property })
+    },
+    getById(_id) {
+        return $api.get(`/property/get-by-id?_id=${_id}`)
     }
 }

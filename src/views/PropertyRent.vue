@@ -2,10 +2,14 @@
 import { onMounted, ref, reactive } from "vue";
 import { useProperty } from '../store/property'
 
+import { useRouter } from 'vue-router'
+
 import VueDatePicker from '@vuepic/vue-datepicker'
 import "@vuepic/vue-datepicker/dist/main.css";
 
 let propertyStore = useProperty()
+
+let router = useRouter()
 
 let properties = ref([]);
 let bookModal = ref(false)
@@ -35,7 +39,7 @@ onMounted(async () => {
     <v-container>
         <v-row>
             <v-col cols="12" sm="4" md="3" v-for="card in  properties ">
-                <v-card class="h-100 d-flex flex-column">
+                <v-card class="h-100 d-flex flex-column" @click="router.push(`/property-page?_id=${card._id}`)">
                     <v-col class="pa-0">
                         <div
                             :style="`aspect-ratio: 1/1; background: url(${card.images[0]}) 50% 50% no-repeat; background-size: cover;`">

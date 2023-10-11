@@ -62,6 +62,11 @@ const routes = [
         component: () => import('@/views/Contacts.vue'),
       },
       {
+        path: '/property-page',
+        name: 'PropertyPage',
+        component: () => import('@/views/PropertyPage.vue')
+      },
+      {
         path: '/admin',
         name: 'Admin',
         component: () => import('@/views/Admin/Index.vue'),
