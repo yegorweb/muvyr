@@ -1,12 +1,3 @@
 .cursor-pointer {
     cursor: pointer;
 }
-
-html, body {
-    overflow-x: hidden;
-    overflow-y: auto !important;
-}
-
-html {
-    margin-left: calc(100vw - 100%);
-}
