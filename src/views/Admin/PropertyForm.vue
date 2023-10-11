@@ -74,7 +74,7 @@ async function submit() {
     let imagesFormData = new FormData();
     for (let i = 0; i < blobImages.length; i++) {
         imagesFormData.append(
-            "poster-image",
+            "property-image",
             new File([blobImages[i]], _id + "_" + i + ".jpg"),
             _id + "_" + i + ".jpg"
         );
