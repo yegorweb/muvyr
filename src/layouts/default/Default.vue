@@ -6,7 +6,9 @@ import Header from '@/components/Header.vue';
   <v-app>
     <Header />
       <v-main>
-        <router-view />
+        <Transition name="fade">
+          <router-view />
+        </Transition>
       </v-main>
   </v-app>
 </template>
