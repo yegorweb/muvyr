@@ -17,7 +17,7 @@ onMounted(async () => {
     </v-row>
     <v-row>
         <v-col cols="12">
-            <v-btn to=" /admin/property-form">
+            <v-btn to="/admin/property-form">
                 + добавить
             </v-btn>
         </v-col>
