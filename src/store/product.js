@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import ProductService from '@/service/ProductService'
 
-export const useProperty = defineStore('property', {
+export const useProduct = defineStore('product', {
     state: () => ({
         products: []
     }),
