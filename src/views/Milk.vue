@@ -40,7 +40,7 @@ onMounted(async () => {
                 <div>Цена:
                   <b>{{ card.price }}</b>
                 </div>
-                <div v-if="card.mass?.length">Вес:
+                <div v-if="card.mass?.length">
                   <b>{{ card.mass }}</b>
                 </div>
               </div>
@@ -62,8 +62,7 @@ onMounted(async () => {
                   </v-col>
 
                   <v-col cols="auto">
-                    <v-btn variant="plain" :ripple="false" icon="mdi-plus"
-                      @click="cartStore.amountUp(card._id)"></v-btn>
+                    <v-btn variant="plain" :ripple="false" icon="mdi-plus" @click="cartStore.amountUp(card._id)"></v-btn>
                   </v-col>
                 </v-row>
               </div>
