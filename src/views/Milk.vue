@@ -1,9 +1,11 @@
 <script setup>
 import { onMounted } from "vue";
 import { useProduct } from '../store/product'
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useCart } from "@/store/cart";
 
 let productStore = useProduct()
+let cartStore = useCart()
 
 let products = ref([]);
 
@@ -16,24 +18,51 @@ onMounted(async () => {
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="4" v-for="card in products">
+      <v-col cols="12" sm="6" md="4" lg="3" v-for="card in products">
         <v-card class="h-100 d-flex flex-column">
           <v-col class="pa-0">
             <div :style="`aspect-ratio: 1/1; background: url(${card.image}) 50% 50% no-repeat; background-size: cover;`">
             </div>
           </v-col>
 
-          <div class="w-100 h-100 pa-4 d-flex flex-column justify-space-between">
+          <div class="w-100 h-100 pl-4 pt-4 pr-4 d-flex flex-column justify-space-between">
             <div>
               <h3>{{ card.name }}</h3>
               {{ card.description }}
             </div>
+
             <div class="mt-3">
               <div>Цена:
-                <b>{{ card.price }} руб</b>
+                <b>{{ card.price }}</b>
               </div>
               <div v-if="card.mass?.length">Вес:
                 <b>{{ card.mass }}</b>
+              </div>
+              
+              <div class="w-100 d-flex flex-column align-stretch justify-end" style="height: 60px;">
+                <v-btn 
+                  class="w-100 mt-3 mb-3 text-black rounded-lg elevation-0"
+                  variant="outlined"
+                  :ripple="false"
+                  v-if="!cartStore.cart.some(item => item._id === card._id)"
+                  @click="cartStore.addItem(card)"
+                >
+                  Добавить
+                </v-btn>
+  
+                <v-row v-else class="justify-center align-center">
+                  <v-col cols="auto">
+                    <v-btn variant="plain" :ripple="false" icon="mdi-minus" @click="cartStore.amountDown(card._id)"></v-btn>
+                  </v-col>
+  
+                  <v-col cols="3" class="text-center" style="font-family: 'Dela Gothic One';">
+                    {{ cartStore.cart.find(milk => milk._id === card._id).amount }}
+                  </v-col>
+  
+                  <v-col cols="auto">
+                    <v-btn variant="plain" :ripple="false" icon="mdi-plus" @click="cartStore.amountUp(card._id)"></v-btn>
+                  </v-col>
+                </v-row>
               </div>
             </div>
           </div>
