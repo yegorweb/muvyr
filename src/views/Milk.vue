@@ -40,6 +40,20 @@ onMounted(async () => {
         </v-card>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col class="d-flex justify-center" cols="12">
+        <h3>Карта магазинов</h3>
+      </v-col>
+      <v-col class="d-flex justify-center">
+        <div style="overflow:hidden;"><a href="https://yandex.ru/maps/44/izhevsk/?utm_medium=mapframe&utm_source=maps"
+            style="color:#eee;font-size:12px;position:absolute;top:0px;">Ижевск</a><a
+            href="https://yandex.ru/maps/44/izhevsk/?ll=53.287342%2C56.880897&mode=usermaps&source=constructorLink&um=constructor%3Ab01ee8bc4a574f41b741e1503477625cbfa738f229e7bf365d7f5af115ae0982&utm_medium=mapframe&utm_source=maps&z=12"
+            style="color:#eee;font-size:12px;position:absolute;top:14px;">Карта Ижевска с улицами и номерами домов —
+            Яндекс Карты</a><iframe
+            src="https://yandex.ru/map-widget/v1/?ll=53.287342%2C56.880897&mode=usermaps&source=constructorLink&um=constructor%3Ab01ee8bc4a574f41b741e1503477625cbfa738f229e7bf365d7f5af115ae0982&utm_source=share&z=12"
+            width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 <style scoped>
