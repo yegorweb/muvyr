@@ -15,7 +15,7 @@ let router = useRouter()
     </div>
 </template>
 
-<style>
+<style scoped>
 .logo-text {
     font-family: Marmelad;
     color: #FFFFFF;

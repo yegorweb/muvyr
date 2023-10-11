@@ -32,7 +32,7 @@ let cards = []
     </v-row>
   </v-container>
 </template>
-<style>
+<style scoped>
 .v-card {
   border-radius: 12px !important;
   -webkit-box-shadow: 0px 10px 40px 5px rgba(34, 60, 80, 0.1) !important;
