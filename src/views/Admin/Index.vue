@@ -16,7 +16,7 @@ import BackButton from '@/components/BackButton.vue';
                         </v-row>
                         <v-row class="d-flex pa-0">
                             <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin">
+                                <v-list-item class="cursor-pointer" to="/admin" :active="false">
                                     Домики
                                 </v-list-item>
                             </v-col>
@@ -26,8 +26,18 @@ import BackButton from '@/components/BackButton.vue';
                                 </v-list-item>
                             </v-col>
                             <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/property-fo">
-                                    Мероприятия
+                                <v-list-item class="cursor-pointer" to="/admin/excursions">
+                                    Экскурсии
+                                </v-list-item>
+                            </v-col>
+                            <v-col cols="4">
+                                <v-list-item class="cursor-pointer" to="/admin/transport-rent">
+                                    Прокат
+                                </v-list-item>
+                            </v-col>
+                            <v-col cols="4">
+                                <v-list-item class="cursor-pointer" to="/admin/weddings">
+                                    Свадьбы
                                 </v-list-item>
                             </v-col>
                         </v-row>
