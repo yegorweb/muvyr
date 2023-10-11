@@ -12,7 +12,7 @@ let router = useRouter()
     </video>
 
     <v-container style="position: absolute; bottom: 0; left: 0; top: 0; right: 0;">
-      <div class="w-100 h-100 d-flex flex-column justify-space-between align-start">
+      <div class="w-100 h-100 d-flex flex-column justify-space-between align-start" style="gap: 18px;">
         <div></div>
         
         <div class="w-100">
