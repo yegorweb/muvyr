@@ -81,11 +81,11 @@
 
 
 .slide-up-enter-active {
-    transition: all 1.2s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .slide-up-leave-active {
-    transition: all 1.2s cubic-bezier(1, 0.5, 0.8, 1);
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .slide-up-enter-from,
