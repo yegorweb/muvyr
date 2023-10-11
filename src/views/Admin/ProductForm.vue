@@ -2,36 +2,13 @@
 import { reactive, ref } from 'vue'
 import ImageCropper from '../../components/ImageCropper.vue'
 
-import { QuillEditor } from "@vueup/vue-quill";
-import "@vueup/vue-quill/dist/vue-quill.snow.css";
-
 import { useRouter } from 'vue-router';
 
-import { useProperty } from '@/store/property';
+import { useProduct } from '@/store/product';
 
 const router = useRouter()
 
-const options = reactive({
-    theme: 'snow',
-    modules: {
-        clipboard: {
-            allowed: {
-                tags: ['a', 'b', 'strong', 'u', 's', 'i', 'p', 'br', 'ul', 'ol', 'li', 'span'],
-                attributes: ['href', 'rel', 'target', 'class']
-            },
-            keepSelection: true,
-            substituteBlockElements: true,
-            magicPasteLinks: true,
-            hooks: {
-                uponSanitizeElement(node, data, config) {
-                    console.log(node);
-                },
-            },
-        },
-    },
-})
-
-let propertyStore = useProperty()
+let productStore = useProduct()
 
 let visibleCropperModal = ref(false)
 let previews = ref([])
@@ -60,26 +37,25 @@ function addPreview(blob) {
 
 let form = reactive({
     title: '',
-    // описание: локация, телевизор, холодильник, туалет, 
+    // описание
     description: '',
-    // кол-во мест,
-    peopleCount: null,
-    // name - взрослый, детский; amount - цена
-    price: null,
-    images: '',
+    // объём, масса
+    mass: '',
+    price: '',
+    image: '',
 })
 async function submit() {
-    let _id = await propertyStore.createProperty(form)
+    let _id = await productStore.createProduct(form)
 
     let imagesFormData = new FormData();
     for (let i = 0; i < blobImages.length; i++) {
         imagesFormData.append(
-            "property-image",
+            "product-image",
             new File([blobImages[i]], _id + "_" + i + ".jpg"),
             _id + "_" + i + ".jpg"
         );
     }
-    propertyStore.uploadPropertyImages(imagesFormData).then(() => {
+    productStore.uploadProductImage(imagesFormData).then(() => {
         console.log('фотографии загружены')
     })
     router.push('/admin')
@@ -96,20 +72,13 @@ async function submit() {
         <v-row class="d-flex">
             <v-col cols="12">
                 Описание
-                <QuillEditor theme="snow" ref="quill" contentType="html" v-model:content="form.description" :toolbar="[
-                    ['bold', 'italic', 'underline'],
-                    [{ list: 'ordered' }, { list: 'bullet' }],
-                    [{ color: ['#000000', '#ED413E'] }],
-                    [{ align: [] }],
-                ]" :options="options">
-
-                </QuillEditor>
+                <v-textarea v-model="form.description"></v-textarea>
             </v-col>
         </v-row>
         <v-row class="d-flex">
             <v-col cols="6">
-                Количество человек
-                <v-text-field v-model="form.peopleCount"></v-text-field>
+                Масса/Объём
+                <v-text-field v-model="form.mass"></v-text-field>
             </v-col>
             <v-col cols="6">
                 Цена
@@ -118,7 +87,7 @@ async function submit() {
         </v-row>
         <v-row class="d-flex">
             <v-col cols="12" md="4">
-                <v-btn> добавить фото
+                <v-btn v-if="previews.length < 1"> добавить фото
                     <v-dialog v-model="visibleCropperModal" activator="parent">
                         <v-row class="justify-center">
                             <v-col cols="12" md="8" lg="6">

@@ -15,7 +15,7 @@
                                 </v-list-item>
                             </v-col>
                             <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/property-for">
+                                <v-list-item class="cursor-pointer" to="/admin/product">
                                     Молоко
                                 </v-list-item>
                             </v-col>

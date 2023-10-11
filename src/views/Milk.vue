@@ -1,12 +1,23 @@
 <script setup>
+import { onMounted } from "vue";
+import { useProduct } from '../store/product'
 import { ref } from "vue";
-let cards = []
+
+let productStore = useProduct()
+
+let products = ref([]);
+
+onMounted(async () => {
+    await productStore.getAllProducts();
+    products.value = productStore.products
+    console.log(products.value);
+})
 </script>
 
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="4" v-for="card in cards">
+      <v-col cols="12" md="4" v-for="card in products">
         <v-card class="h-100 d-flex flex-column">
           <v-col class="pa-0">
             <div :style="`aspect-ratio: 1/1; background: url(${card.image}) 50% 50% no-repeat; background-size: cover;`">

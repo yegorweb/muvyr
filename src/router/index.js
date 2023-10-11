@@ -75,6 +75,16 @@ const routes = [
             path: 'property-form',
             name: 'PropertyForm',
             component: () => import('@/views/Admin/PropertyForm.vue')
+          },
+          {
+            path: 'product-form',
+            name: 'ProductForm',
+            component: () => import('@/views/Admin/ProductForm.vue')
+          },
+          {
+            path: 'product',
+            name: 'Product',
+            component: () => import('@/views/Admin/Product.vue')
           }
         ]
       }
