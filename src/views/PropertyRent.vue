@@ -2,6 +2,9 @@
 import { onMounted, ref, reactive } from "vue";
 import { useProperty } from '../store/property'
 
+import VueDatePicker from '@vuepic/vue-datepicker'
+import "@vuepic/vue-datepicker/dist/main.css";
+
 let propertyStore = useProperty()
 
 let properties = ref([]);
@@ -10,10 +13,15 @@ let bookModal = ref(false)
 let bookForm = reactive({
     email: '',
     phone: '',
-    peopleCount: ''
+    peopleCount: '',
+    startBooking: null,
+    endBooking: null
 })
 
 function sendRequest(property) {
+    bookForm.startBooking = new Date(bookForm.startBooking).toLocaleDateString()
+    bookForm.endBooking = new Date(bookForm.endBooking).toLocaleDateString()
+
     propertyStore.bookProperty(bookForm, property)
 }
 
@@ -26,7 +34,7 @@ onMounted(async () => {
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12" sm="4" md="3" v-for="card in properties">
+            <v-col cols="12" sm="4" md="3" v-for="card in  properties ">
                 <v-card class="h-100 d-flex flex-column">
                     <v-col class="pa-0">
                         <div
@@ -65,13 +73,35 @@ onMounted(async () => {
                             </v-row>
                             <v-row>
                                 <v-col cols="12">
-                                    Количетсво людей
+                                    Количество людей
                                     <v-text-field v-model="bookForm.peopleCount"></v-text-field>
                                 </v-col>
                             </v-row>
-                            <v-card-actions>
-                                <v-btn @click="sendRequest(card)">отправить</v-btn>
-                            </v-card-actions>
+                            <v-row>
+                                <v-col cols="12">
+                                    Начало бронирования
+                                    <VueDatePicker locale="ru" v-model="bookForm.startBooking" class="mb-1"
+                                        minutes-grid-increment="2" input-class-name="dp-custom-input"
+                                        placeholder="дата и время" :transitions="{
+                                            open: 'fade',
+                                            close: 'fade',
+                                        }" />
+                                </v-col>
+                                <v-col cols="12">
+                                    Конец бронирования
+                                    <VueDatePicker locale="ru" v-model="bookForm.endBooking" class="mb-1"
+                                        minutes-grid-increment="2" input-class-name="dp-custom-input"
+                                        placeholder="дата и время" :transitions="{
+                                            open: 'fade',
+                                            close: 'fade',
+                                        }" />
+                                </v-col>
+                            </v-row>
+                            <v-row>
+                                <v-col>
+                                    <v-btn @click="sendRequest(card)">отправить</v-btn>
+                                </v-col>
+                            </v-row>
                         </v-card>
                     </v-dialog>
                 </v-card>
