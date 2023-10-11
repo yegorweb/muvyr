@@ -6,9 +6,11 @@ import Header from '@/components/Header.vue';
   <v-app>
     <Header />
       <v-main>
-        <Transition name="fade">
-          <router-view />
-        </Transition>
+        <router-view v-slot="{ Component }">
+          <transition name="fade">
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </v-main>
   </v-app>
 </template>
