@@ -1,5 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 const routes = [
   {
@@ -65,6 +66,10 @@ const routes = [
         path: '/admin',
         name: 'Admin',
         component: () => import('@/views/Admin/Index.vue'),
+        beforeEnter: () => {
+          if (localStorage.getItem('isAuth') == 'false' || !localStorage.getItem('isAuth'))
+            useRouter().push('/auth')
+        },
         children: [
           {
             path: '',
@@ -87,6 +92,11 @@ const routes = [
             component: () => import('@/views/Admin/Product.vue')
           }
         ]
+      },
+      {
+        path: '/auth',
+        name: 'Auth',
+        component: () => import('@/views/Auth.vue')
       }
     ],
   },
