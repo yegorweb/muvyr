@@ -5,10 +5,10 @@ import BackButton from '@/components/BackButton.vue';
     <v-container>
 
         <v-row class="d-flex justify-center">
-            <v-col cols="12" md="8">
+            <v-col cols="12">
                 <back-button></back-button>
             </v-col>
-            <v-col cols="12" md="8">
+            <v-col cols="12">
                 <v-list nav>
                     <v-container>
                         <v-row class="pa-0">
