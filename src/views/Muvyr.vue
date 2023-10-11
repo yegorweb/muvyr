@@ -19,22 +19,26 @@ let router = useRouter()
         <div class="w-100">
           <v-row class="justify-center">
             <v-col cols="auto">
-              <div class="gray-container title">
-                Возрождённая деревня
-              </div>
+              <Transition name="slide-down" appear>
+                <div class="gray-container title">
+                  Возрождённая деревня
+                </div>
+              </Transition>
             </v-col>
           </v-row>
         </div>
 
-        <div class="list gray-container d-flex flex-column">
-          <div @click="router.push('/')">Дер. МУВЫР</div>
-          <div @click="router.push('/milk')">МОЛОКО</div>
-          <div @click="router.push('/transport-rent')">ПРОКАТ</div>
-          <div @click="router.push('/wedding')">СВАДЬБЫ</div>
-          <div @click="router.push('/excursions')">ЭКСКУРСИИ</div>
-          <div @click="router.push('/events')">МЕРОПРИЯТИЯ</div>
-          <div @click="router.push('/property-rent')">БРОНИРОВАНИЕ</div>
-        </div>
+        <Transition name="slide-up" appear>
+          <div class="list gray-container d-flex flex-column">
+            <div class="list-item-anim" @click="router.push('/')">Дер. МУВЫР</div>
+            <div class="list-item-anim" @click="router.push('/milk')">МОЛОКО</div>
+            <div class="list-item-anim" @click="router.push('/transport-rent')">ПРОКАТ</div>
+            <div class="list-item-anim" @click="router.push('/wedding')">СВАДЬБЫ</div>
+            <div class="list-item-anim" @click="router.push('/excursions')">ЭКСКУРСИИ</div>
+            <div class="list-item-anim" @click="router.push('/events')">МЕРОПРИЯТИЯ</div>
+            <div class="list-item-anim" @click="router.push('/property-rent')">БРОНИРОВАНИЕ</div>
+          </div>
+        </Transition>
       </div>
     </v-container>
   </div>

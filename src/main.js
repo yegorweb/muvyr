@@ -1,6 +1,7 @@
 // Styles
 import '@/assets/main.scss'
 import '@/assets/fonts.scss'
+import '@/assets/animations.scss'
 
 import App from './App.vue'
 import { createApp } from 'vue'
