@@ -12,6 +12,11 @@ const routes = [
         component: () => import('@/views/Muvyr.vue'),
       },
       {
+        path: 'info',
+        name: 'Info',
+        component: () => import('@/views/Info.vue')
+      },
+      {
         path: '/excursions',
         name: 'Excursions',
         component: () => import('@/views/Excursions.vue'),
