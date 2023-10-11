@@ -60,7 +60,7 @@ let router = useRouter()
   transition: all .15s;
 
   &:hover {
-    color: #96c097;
+    color: #afd4b0;
   }
 }
 .gray-container {
