@@ -4,6 +4,8 @@ import { useProperty } from '../store/property'
 
 import { useRouter } from 'vue-router'
 
+import "@vuepic/vue-datepicker/dist/main.css";
+import BackButton from "@/components/BackButton.vue";
 
 let propertyStore = useProperty()
 
@@ -19,6 +21,8 @@ onMounted(async () => {
 
 <template>
     <v-container>
+        <back-button></back-button>
+        
         <v-row>
             <v-col cols="12" class="text-center" style="font-size: 35px;">
                 <span style="font-family: 'Dela Gothic One';">Домики</span>

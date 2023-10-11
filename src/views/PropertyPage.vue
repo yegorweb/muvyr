@@ -2,6 +2,7 @@
 import { onMounted, ref, reactive } from 'vue';
 import { useProperty } from '../store/property'
 import { useRouter } from 'vue-router';
+import BackButton from '@/components/BackButton.vue';
 
 import VueDatePicker from '@vuepic/vue-datepicker'
 import "@vuepic/vue-datepicker/dist/main.css";
@@ -33,6 +34,8 @@ onMounted(async () => {
 </script>
 <template>
     <v-container>
+        <back-button></back-button>
+
         <v-row v-if="property._id">
             <v-col cols="12" md="6">
                 <v-carousel class="h-100" hide-delimiter-background hide-delimiters show-arrows="hover">

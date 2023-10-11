@@ -3,6 +3,7 @@ import { onMounted } from "vue";
 import { useProduct } from '../store/product'
 import { ref } from "vue";
 import { useCart } from "@/store/cart";
+import BackButton from "@/components/BackButton.vue";
 
 
 import VueDatePicker from '@vuepic/vue-datepicker'
@@ -22,6 +23,8 @@ onMounted(async () => {
 <template>
   <div>
     <v-container>
+      <back-button></back-button>
+      
       <v-row>
         <v-col cols="12" class="text-center" style="font-size: 35px;">
           <span style="font-family: 'Dela Gothic One';">Молоко</span>

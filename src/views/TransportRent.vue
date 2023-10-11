@@ -1,4 +1,5 @@
 <script setup>
+import BackButton from "@/components/BackButton.vue";
 import { ref } from "vue";
 let transports = ref([{
   title: 'Прокат велосипедов',
@@ -27,6 +28,8 @@ let transports = ref([{
 </script>
 <template>
   <v-container>
+    <back-button></back-button>
+    
     <v-row>
       <v-col cols="12" class="text-center" style="font-size: 35px;">
         <span style="font-family: 'Dela Gothic One';">Прокат</span>
