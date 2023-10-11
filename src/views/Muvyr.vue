@@ -47,7 +47,8 @@ let router = useRouter()
 .wrapper {
   width: 100vw;
   height: 100%;
-  background: #1d421e;
+  background: url(/startImg.webp) 50% top 80px no-repeat;
+  background-size: cover;
   position: relative;
 }
 .list {
