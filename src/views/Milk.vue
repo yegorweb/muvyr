@@ -8,9 +8,8 @@ let productStore = useProduct()
 let products = ref([]);
 
 onMounted(async () => {
-    await productStore.getAllProducts();
-    products.value = productStore.products
-    console.log(products.value);
+  await productStore.getAllProducts();
+  products.value = productStore.products
 })
 </script>
 
