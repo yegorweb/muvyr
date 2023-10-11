@@ -29,7 +29,7 @@ let router = useRouter()
 
         <Transition name="slide-up" appear>
           <div class="list gray-container d-flex flex-column">
-            <div class="list-item-anim" @click="router.push('/')">Дер. МУВЫР</div>
+            <div class="list-item-anim" @click="router.push('/info')">Дер. МУВЫР</div>
             <div class="list-item-anim" @click="router.push('/milk')">МОЛОКО</div>
             <div class="list-item-anim" @click="router.push('/transport-rent')">ПРОКАТ</div>
             <div class="list-item-anim" @click="router.push('/wedding')">СВАДЬБЫ</div>
