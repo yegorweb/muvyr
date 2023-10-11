@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import ProductService from '@/service/ProductService'
 
-export const useProperty = defineStore('property', {
+export const useProduct = defineStore('product', {
     state: () => ({
         products: []
     }),
@@ -17,5 +17,14 @@ export const useProperty = defineStore('property', {
                 console.log(error);
             }
         },
+        async uploadProductImage(images) {
+            try {
+                let response = await ProductService.uploadProductImage(images)
+
+                return response
+            } catch (error) {
+                console.log(error);
+            }
+        }
     }
 })
