@@ -14,7 +14,7 @@ let router = useRouter()
                     <span class="logo-text" style="user-select: none;">МУВЫР</span>
                 </div>
                 
-                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon :ripple="false"></v-app-bar-nav-icon>
             </div>
         </v-container>
     </v-app-bar>
