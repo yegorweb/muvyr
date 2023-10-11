@@ -4,7 +4,7 @@ export default {
     createProduct(newProduct) {
         return $api.post('/product/add-product', newProduct)
     },
-    uploadProductImage(images) {
-        return $api.post('/product/upload-product-image', images)
+    getAllProducts() {
+        return $api.post('/product/get-all-products')
     }
 }

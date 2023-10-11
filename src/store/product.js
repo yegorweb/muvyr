@@ -17,14 +17,15 @@ export const useProduct = defineStore('product', {
                 console.log(error);
             }
         },
-        async uploadProductImage(images) {
+        async getAllProducts() {
             try {
-                let response = await ProductService.uploadProductImage(images)
+                let response = await ProductService.getAllProducts()
+                this.product = response.data
 
-                return response
+                return
             } catch (error) {
                 console.log(error);
             }
-        }
+        },
     }
 })
