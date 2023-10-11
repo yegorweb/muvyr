@@ -4,11 +4,11 @@ import ImageCropper from '../../components/ImageCropper.vue'
 
 import { useRouter } from 'vue-router';
 
-import { useProperty } from '@/store/property';
+import { useProduct } from '@/store/product';
 
 const router = useRouter()
 
-let propertyStore = useProperty()
+let productStore = useProduct()
 
 let visibleCropperModal = ref(false)
 let previews = ref([])
@@ -45,19 +45,17 @@ let form = reactive({
     image: '',
 })
 async function submit() {
-    console.log(form);
-    return
-    let _id = await propertyStore.createProperty(form)
+    let _id = await productStore.createProduct(form)
 
     let imagesFormData = new FormData();
     for (let i = 0; i < blobImages.length; i++) {
         imagesFormData.append(
-            "poster-image",
+            "product-image",
             new File([blobImages[i]], _id + "_" + i + ".jpg"),
             _id + "_" + i + ".jpg"
         );
     }
-    propertyStore.uploadPropertyImages(imagesFormData).then(() => {
+    productStore.uploadProductImage(imagesFormData).then(() => {
         console.log('фотографии загружены')
     })
     router.push('/admin')
@@ -89,7 +87,7 @@ async function submit() {
         </v-row>
         <v-row class="d-flex">
             <v-col cols="12" md="4">
-                <v-btn> добавить фото
+                <v-btn v-if="previews.length < 1"> добавить фото
                     <v-dialog v-model="visibleCropperModal" activator="parent">
                         <v-row class="justify-center">
                             <v-col cols="12" md="8" lg="6">

@@ -16,7 +16,7 @@ onMounted(async () => {
 <template>
     <v-container>
         <v-row>
-            <v-col cols="12" md="4" v-for="card in properties">
+            <v-col cols="12" sm="4" md="3" v-for="card in properties">
                 <v-card class="h-100 d-flex flex-column">
                     <v-col class="pa-0">
                         <div
