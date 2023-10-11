@@ -17,5 +17,15 @@ export const useProperty = defineStore('property', {
                 console.log(error);
             }
         },
+        async getAllProducts() {
+            try {
+                let response = await ProductService.getAllProducts()
+                this.product = response.data
+
+                return
+            } catch (error) {
+                console.log(error);
+            }
+        },
     }
 })
