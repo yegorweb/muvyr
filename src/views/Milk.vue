@@ -1,8 +1,13 @@
 <script setup>
 import { onMounted } from "vue";
 import { useProduct } from '../store/product'
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useCart } from "@/store/cart";
+import BackButton from "@/components/BackButton.vue";
+
+
+import VueDatePicker from '@vuepic/vue-datepicker'
+import "@vuepic/vue-datepicker/dist/main.css";
 
 let productStore = useProduct()
 let cartStore = useCart()
@@ -18,9 +23,26 @@ onMounted(async () => {
 <template>
   <div>
     <v-container>
+      <back-button></back-button>
+      
       <v-row>
         <v-col cols="12" class="text-center" style="font-size: 35px;">
           <span style="font-family: 'Dela Gothic One';">Молоко</span>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-end">
+          <div class="d-flex align-center mx-4 font-weight-medium">
+            Сумма заказа: 4000 руб
+          </div>
+          <div>
+            <VueDatePicker locale="ru" class="mb-1" minutes-grid-increment="2" input-class-name="dp-custom-input"
+              placeholder="дата доставки" :transitions="{
+                open: 'fade',
+                close: 'fade',
+              }" />
+          </div>
+          <div class="d-flex align-center mx-4">
+            <v-btn>отправить</v-btn>
+          </div>
         </v-col>
         <v-col cols="12" sm="6" md="4" lg="3" v-for="card in products">
           <v-card class="h-100 d-flex flex-column">
@@ -32,7 +54,7 @@ onMounted(async () => {
 
             <div class="w-100 h-100 pl-4 pt-4 pr-4 d-flex flex-column justify-space-between">
               <div>
-                <h3>{{ card.name }}</h3>
+                <h3>{{ card.title }}</h3>
                 {{ card.description }}
               </div>
 
@@ -40,7 +62,7 @@ onMounted(async () => {
                 <div>Цена:
                   <b>{{ card.price }}</b>
                 </div>
-                <div v-if="card.mass?.length">Вес:
+                <div v-if="card.mass?.length">
                   <b>{{ card.mass }}</b>
                 </div>
               </div>
@@ -62,8 +84,7 @@ onMounted(async () => {
                   </v-col>
 
                   <v-col cols="auto">
-                    <v-btn variant="plain" :ripple="false" icon="mdi-plus"
-                      @click="cartStore.amountUp(card._id)"></v-btn>
+                    <v-btn variant="plain" :ripple="false" icon="mdi-plus" @click="cartStore.amountUp(card._id)"></v-btn>
                   </v-col>
                 </v-row>
               </div>

@@ -1,6 +1,10 @@
-<script setup></script>
+<script setup>
+import BackButton from '@/components/BackButton.vue';
+</script>
 <template>
     <v-container>
+        <back-button></back-button>
+        
         <v-row class="d-flex justify-center">
             <v-col cols="12" md="8">
                 <v-list nav>
