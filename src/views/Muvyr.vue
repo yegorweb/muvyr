@@ -33,7 +33,7 @@ let router = useRouter()
 
         <Transition :name="app.saw_animation ? '' : 'slide-up'" appear>
           <div class="list gray-container d-flex flex-column">
-            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/info')">Дер. МУВЫР</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/info')">д. МУВЫР</div>
             <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/milk')">МОЛОКО</div>
             <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/transport-rent')">ПРОКАТ</div>
             <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/wedding')">СВАДЬБЫ</div>
