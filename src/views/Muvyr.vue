@@ -3,7 +3,7 @@ import { useAppStore } from '@/store/app';
 import { useRouter } from 'vue-router';
 
 let app = useAppStore()
-setTimeout(() => app.sawAnimation(), 2000)
+setTimeout(() => app.sawAnimation(), 100)
 
 let router = useRouter()
 </script>
