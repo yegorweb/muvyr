@@ -1,11 +1,12 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 import { useRouter } from 'vue-router'
+import Default from '@/layouts/default/Default.vue'
 
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
+    component: Default,
     children: [
       {
         path: '',
@@ -18,52 +19,52 @@ const routes = [
         component: () => import('@/views/Info.vue')
       },
       {
-        path: '/excursions',
+        path: 'excursions',
         name: 'Excursions',
-        component: () => import('@/views/Excursions.vue'),
+        component: () => import('../views/Excursions.vue'),
       },
       {
-        path: '/transport-rent',
+        path: 'transport-rent',
         name: 'TransportRent',
         component: () => import('@/views/TransportRent.vue'),
       },
       {
-        path: '/property-rent',
+        path: 'property-rent',
         name: 'PropertyRent',
         component: () => import('@/views/PropertyRent.vue'),
       },
       {
-        path: '/milk',
+        path: 'milk',
         name: 'Milk',
         component: () => import('@/views/Milk.vue'),
       },
       {
-        path: '/wedding',
+        path: 'wedding',
         name: 'Wedding',
         component: () => import('@/views/Wedding.vue'),
       },
       {
-        path: '/events',
+        path: 'events',
         name: 'Events',
         component: () => import('@/views/Events.vue'),
       },
       {
-        path: '/investors',
+        path: 'investors',
         name: 'Investors',
         component: () => import('@/views/Investors.vue'),
       },
       {
-        path: '/contacts',
+        path: 'contacts',
         name: 'Contacts',
         component: () => import('@/views/Contacts.vue'),
       },
       {
-        path: '/property-page',
+        path: 'property-page',
         name: 'PropertyPage',
         component: () => import('@/views/PropertyPage.vue')
       },
       {
-        path: '/admin',
+        path: 'admin',
         name: 'Admin',
         component: () => import('@/views/Admin/Index.vue'),
         beforeEnter: () => {
@@ -90,11 +91,26 @@ const routes = [
             path: 'product',
             name: 'Product',
             component: () => import('@/views/Admin/Product.vue')
-          }
+          },
+          {
+            path: 'excursions',
+            name: 'AdminExcursions',
+            component: () => import('@/views/Admin/Excursions.vue')
+          },
+          {
+            path: 'transport-rent',
+            name: 'AdminTransportRent',
+            component: () => import('@/views/Admin/TransportRent.vue')
+          },
+          {
+            path: 'weddings',
+            name: 'AdminWeddings',
+            component: () => import('@/views/Admin/Weddings.vue')
+          },
         ]
       },
       {
-        path: '/auth',
+        path: 'auth',
         name: 'Auth',
         component: () => import('@/views/Auth.vue')
       }
