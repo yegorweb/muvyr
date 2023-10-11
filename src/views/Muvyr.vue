@@ -1,5 +1,9 @@
 <script setup>
+import { useAppStore } from '@/store/app';
 import { useRouter } from 'vue-router';
+
+let app = useAppStore()
+setTimeout(() => app.sawAnimation(), 2000)
 
 let router = useRouter()
 </script>
@@ -18,7 +22,7 @@ let router = useRouter()
         <div class="w-100">
           <v-row class="justify-center">
             <v-col cols="auto">
-              <Transition name="slide-down" appear>
+              <Transition :name="app.saw_animation ? '' : 'slide-down'" appear>
                 <div class="gray-container title">
                   Возрождённая деревня
                 </div>
@@ -27,15 +31,15 @@ let router = useRouter()
           </v-row>
         </div>
 
-        <Transition name="slide-up" appear>
+        <Transition :name="app.saw_animation ? '' : 'slide-up'" appear>
           <div class="list gray-container d-flex flex-column">
-            <div class="list-item-anim" @click="router.push('/info')">Дер. МУВЫР</div>
-            <div class="list-item-anim" @click="router.push('/milk')">МОЛОКО</div>
-            <div class="list-item-anim" @click="router.push('/transport-rent')">ПРОКАТ</div>
-            <div class="list-item-anim" @click="router.push('/wedding')">СВАДЬБЫ</div>
-            <div class="list-item-anim" @click="router.push('/excursions')">ЭКСКУРСИИ</div>
-            <div class="list-item-anim" @click="router.push('/events')">МЕРОПРИЯТИЯ</div>
-            <div class="list-item-anim" @click="router.push('/property-rent')">БРОНИРОВАНИЕ</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/info')">Дер. МУВЫР</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/milk')">МОЛОКО</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/transport-rent')">ПРОКАТ</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/wedding')">СВАДЬБЫ</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/excursions')">ЭКСКУРСИИ</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/events')">МЕРОПРИЯТИЯ</div>
+            <div :class="app.saw_animation ? '' : 'list-item-anim'" @click="router.push('/property-rent')">БРОНИРОВАНИЕ</div>
           </div>
         </Transition>
       </div>
