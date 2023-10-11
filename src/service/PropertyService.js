@@ -9,5 +9,8 @@ export default {
     },
     uploadPropertyImages(images) {
         return $api.post('/property/upload-property-images', images)
+    },
+    bookProperty(bookForm, property) {
+        return $api.post('/property/book-property', { bookForm, property })
     }
 }
