@@ -3,7 +3,7 @@ import PropertyService from '@/service/PropertyService'
 
 export const useProperty = defineStore('property', {
     state: () => ({
-        propertyArray: []
+        property: []
     }),
     getters: {
     },
@@ -17,5 +17,15 @@ export const useProperty = defineStore('property', {
                 console.log(error);
             }
         },
+        async getAllProperty() {
+            try {
+                let response = await PropertyService.getAllProperty()
+                this.property = response.data
+
+                return
+            } catch (error) {
+                console.log(error);
+            }
+        }
     }
 })
