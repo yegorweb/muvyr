@@ -59,7 +59,7 @@ onMounted(async () => {
                             </div>
                         </div>
                     </div>
-                    <v-btn @click="bookModal = true">заказать</v-btn>
+                    <!-- <v-btn @click="bookModal = true">заказать</v-btn>
 
                     <v-dialog width="500" v-model="bookModal">
                         <v-card title="Заказать" class="pa-4">
@@ -107,7 +107,7 @@ onMounted(async () => {
                                 </v-col>
                             </v-row>
                         </v-card>
-                    </v-dialog>
+                    </v-dialog> -->
                 </v-card>
             </v-col>
         </v-row>
