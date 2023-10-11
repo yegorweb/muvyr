@@ -12,7 +12,7 @@ let router = useRouter()
       Your browser does not support HTML5 video.
     </video>
 
-    <v-container style="height: 100vh !important; position: relative; bottom: 0; left: 0; top: 0; right: 0;">
+    <v-container style="position: absolute; bottom: 0; left: 0; top: 0; right: 0;">
       <div class="w-100 h-100 d-flex flex-column justify-space-between align-start">
         <div></div>
         
