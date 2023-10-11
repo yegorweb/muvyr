@@ -22,11 +22,6 @@ const routes = [
         component: () => import('@/views/Excursions.vue'),
       },
       {
-        path: '/excursions',
-        name: 'Excursions',
-        component: () => import('@/views/Excursions.vue'),
-      },
-      {
         path: '/transport-rent',
         name: 'TransportRent',
         component: () => import('@/views/TransportRent.vue'),
