@@ -25,7 +25,7 @@ onMounted(async () => {
             </v-col>
             <v-col cols="12" md="6">
                 <b>{{ property.title }}</b>
-                <v-span v-html="property.description"></v-span>
+                <span v-html="property.description"></span>
                 <div>
                     Колличество человек: <b>{{ property.peopleCount }}</b>
                 </div>
