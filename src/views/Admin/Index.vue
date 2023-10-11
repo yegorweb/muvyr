@@ -36,7 +36,7 @@ import BackButton from '@/components/BackButton.vue';
             </v-col>
         </v-row>
         <v-row class="d-flex justify-center">
-            <v-col cols="12" md="8">
+            <v-col cols="12">
                 <router-view />
             </v-col>
         </v-row>
