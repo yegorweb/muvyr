@@ -1,11 +1,21 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref, reactive } from "vue";
 import { useProperty } from '../store/property'
-import { ref } from "vue";
 
 let propertyStore = useProperty()
 
 let properties = ref([]);
+let bookModal = ref(false)
+
+let bookForm = reactive({
+    email: '',
+    phone: '',
+    peopleCount: ''
+})
+
+function sendRequest() {
+    console.log(bookForm);
+}
 
 onMounted(async () => {
     await propertyStore.getAllProperty();
@@ -37,9 +47,35 @@ onMounted(async () => {
                             </div>
                         </div>
                     </div>
+                    <v-btn @click="bookModal = true">заказать</v-btn>
                 </v-card>
             </v-col>
         </v-row>
+        <v-dialog width="500" v-model="bookModal">
+            <v-card title="Заказать" class="pa-4">
+                <v-row>
+                    <v-col cols="12">
+                        Ваш email
+                        <v-text-field v-model="bookForm.email"></v-text-field>
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="12">
+                        Телефон
+                        <v-text-field v-model="bookForm.phone"></v-text-field>
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="12">
+                        Количетсво людей
+                        <v-text-field v-model="bookForm.peopleCount"></v-text-field>
+                    </v-col>
+                </v-row>
+                <v-card-actions>
+                    <v-btn @click="sendRequest">отправить</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 </template>
 <style scoped>
