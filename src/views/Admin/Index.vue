@@ -40,6 +40,11 @@ import BackButton from '@/components/BackButton.vue';
                                     Свадьбы
                                 </v-list-item>
                             </v-col>
+                            <v-col cols="4">
+                                <v-list-item class="cursor-pointer" to="/admin/event">
+                                    Мероприятия
+                                </v-list-item>
+                            </v-col>
                         </v-row>
                     </v-container>
                 </v-list>
