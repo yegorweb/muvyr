@@ -5,7 +5,11 @@ import ImageCropper from '../../components/ImageCropper.vue'
 import { QuillEditor } from "@vueup/vue-quill";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 
+import { useRouter } from 'vue-router';
+
 import { useProperty } from '@/store/property';
+
+const router = useRouter()
 
 const options = reactive({
     theme: 'snow',
@@ -66,11 +70,19 @@ let form = reactive({
 })
 async function submit() {
     let _id = await propertyStore.createProperty(form)
-    console.log(_id);
-    return
+
     let imagesFormData = new FormData();
-    imagesFormData.append("poster-image", new File([blobImage], _id + ".jpg"), _id + ".jpg");
-    await posterStore.uploadImage(imagesFormData, _id);
+    for (let i = 0; i < blobImages.length; i++) {
+        imagesFormData.append(
+            "poster-image",
+            new File([blobImages[i]], _id + "_" + i + ".jpg"),
+            _id + "_" + i + ".jpg"
+        );
+    }
+    propertyStore.uploadPropertyImages(imagesFormData).then(() => {
+        console.log('фотографии загружены')
+    })
+    router.push('/admin')
 }
 </script>
 <template>

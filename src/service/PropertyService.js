@@ -6,5 +6,8 @@ export default {
     },
     getAllProperty() {
         return $api.post('/property/get-all-property')
+    },
+    uploadPropertyImages(images) {
+        return $api.post('/property/upload-property-images', images)
     }
 }
