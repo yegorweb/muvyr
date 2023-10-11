@@ -8,13 +8,17 @@ let router = useRouter()
     <v-app-bar elevation="0">
         <v-container>
             <div class="w-100 d-flex justify-space-between align-center">
-                <div class="d-flex align-center cursor-pointer" @click="router.push('/')">
-                    <img src="@/assets/logo.svg" style="height: 40px;" alt="">
-                    
-                    <span class="logo-text" style="user-select: none;">МУВЫР</span>
-                </div>
-                
-                <v-app-bar-nav-icon :ripple="false"></v-app-bar-nav-icon>
+                <Transition name="slide-fade-reverse" appear>
+                    <div class="d-flex align-center cursor-pointer" @click="router.push('/')">
+                        <img src="@/assets/logo.svg" style="height: 40px;" alt="">
+                        
+                        <span class="logo-text" style="user-select: none;">МУВЫР</span>
+                    </div>
+                </Transition>
+
+                <Transition name="slide-fade" appear>                
+                    <v-app-bar-nav-icon :ripple="false"></v-app-bar-nav-icon>
+                </Transition>
             </div>
         </v-container>
     </v-app-bar>
