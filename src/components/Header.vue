@@ -27,7 +27,33 @@ let drawer = ref(false)
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" location="right" temporary>
         <v-list>
-            <v-list-item link title="aboba" :to="excursions"></v-list-item>
+            <v-list-item class="cursor-pointer" to="/info" exact :ripple="false">
+                Деревня Мувыр
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/excursions" exact :ripple="false">
+                Экскурсии
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/transport-rent" exact :ripple="false">
+                Прокат
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/property-rent" exact :ripple="false">
+                Бронирование
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/milk" exact :ripple="false">
+                Молоко
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/events" exact :ripple="false">
+                Мероприятия
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/wedding" exact :ripple="false">
+                Свадьбы 
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/contacts" exact :ripple="false">
+                Контакты 
+            </v-list-item>
+            <v-list-item class="cursor-pointer" to="/investors" exact :ripple="false">
+                Инвесторам 
+            </v-list-item>
         </v-list>
     </v-navigation-drawer>
 </template>
@@ -38,5 +64,8 @@ let drawer = ref(false)
     color: #000000;
     margin-left: 18px;
     font-size: 26px;
+}
+.v-navigation-drawer{
+    height: 50% !important;
 }
 </style>
