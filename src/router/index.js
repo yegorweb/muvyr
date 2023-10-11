@@ -107,6 +107,11 @@ const routes = [
             name: 'AdminWeddings',
             component: () => import('@/views/Admin/Weddings.vue')
           },
+          {
+            path: 'event',
+            name: 'event',
+            component: () => import('@/views/Admin/Event.vue')
+          }
         ]
       },
       {
