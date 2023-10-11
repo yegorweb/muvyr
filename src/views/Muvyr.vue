@@ -1,5 +1,4 @@
 <script setup>
-import HeaderForHome from '@/components/HeaderForHome.vue'
 import { useRouter } from 'vue-router';
 
 let router = useRouter()
