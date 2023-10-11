@@ -27,6 +27,9 @@ let drawer = ref(false)
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" location="right" temporary>
         <v-list>
+            <v-list-item class="cursor-pointer" to="/admin" exact :ripple="false">
+                Админ
+            </v-list-item>
             <v-list-item class="cursor-pointer" to="/info" exact :ripple="false">
                 Деревня Мувыр
             </v-list-item>
@@ -46,13 +49,13 @@ let drawer = ref(false)
                 Мероприятия
             </v-list-item>
             <v-list-item class="cursor-pointer" to="/wedding" exact :ripple="false">
-                Свадьбы 
+                Свадьбы
             </v-list-item>
             <v-list-item class="cursor-pointer" to="/contacts" exact :ripple="false">
-                Контакты 
+                Контакты
             </v-list-item>
             <v-list-item class="cursor-pointer" to="/investors" exact :ripple="false">
-                Инвесторам 
+                Инвесторам
             </v-list-item>
         </v-list>
     </v-navigation-drawer>
@@ -65,7 +68,8 @@ let drawer = ref(false)
     margin-left: 18px;
     font-size: 26px;
 }
-.v-navigation-drawer{
-    height: 50% !important;
+
+.v-navigation-drawer {
+    height: 70% !important;
 }
 </style>
