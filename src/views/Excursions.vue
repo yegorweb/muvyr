@@ -5,13 +5,31 @@ let transports = ref([{
   title: 'Экскурсия по возрожденной деревне с питанием',
   image: "https://thumb.tildacdn.com/tild3063-3938-4463-b761-656430626635/-/cover/432x475/center/center/-/format/webp/b036r3OXf0E.jpg",
   description: "",
-  price: "700р."
-},])
+  price: "700 руб"
+}, {
+  title: "Фотосессия с лошадью",
+  image: "https://sun9-64.userapi.com/-GFnN8CH6E4d4rq4SAgA8F_CEueR71kE5q0c0g/BjLQo40t14A.jpg",
+  description: "",
+  price: "500 руб"
+},
+{
+  title: "Рыбалка",
+  image: "https://sun9-46.userapi.com/RAz8cKI90MOy4xU2M9ecBFQ55HSqF84GRoDPDQ/fLnehLCR9ak.jpg",
+  descirption: "",
+  price: "300 руб"
+},
+{
+  title: "Сап-бординг",
+  image: "https://sun9-73.userapi.com/0vani0UeASwTDRb1pW-vMOPjR9xjlkzuZPFqSg/mik_ohO0H7o.jpg",
+  description: "",
+  price: "500 руб"
+}
+])
 </script>
 <template>
   <v-container>
     <back-button></back-button>
-    
+
     <v-row>
       <v-col cols="12" class="text-center" style="font-size: 35px;">
         <span style="font-family: 'Dela Gothic One';">Экскурсии</span>
