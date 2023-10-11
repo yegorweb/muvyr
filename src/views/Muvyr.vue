@@ -50,7 +50,7 @@ let router = useRouter()
 <style scoped lang="scss">
 .wrapper {
   width: 100vw;
-  height: 100%;
+  height: calc(100vh - 60px);
   background: url(/startImg.webp) 50% top 80px no-repeat;
   background-size: cover;
   position: relative;
