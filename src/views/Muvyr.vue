@@ -14,8 +14,8 @@ let router = useRouter()
 
     <v-container style="height: 100vh !important; position: relative; bottom: 0; left: 0; top: 0; right: 0;">
       <div class="w-100 h-100 d-flex flex-column justify-space-between align-start">
-        <HeaderForHome />
-          
+        <div></div>
+        
         <div class="w-100">
           <v-row class="justify-center">
             <v-col cols="auto">
