@@ -18,6 +18,9 @@ onMounted(async () => {
 <template>
   <v-container>
     <v-row>
+      <v-col cols="12" class="text-center" style="font-size: 35px;">
+        <span style="font-family: 'Dela Gothic One';">Молоко</span>
+      </v-col>
       <v-col cols="12" sm="6" md="4" lg="3" v-for="card in products">
         <v-card class="h-100 d-flex flex-column">
           <v-col class="pa-0">
@@ -43,27 +46,23 @@ onMounted(async () => {
                   <b>{{ card.mass }}</b>
                 </div>
               </div>
-              
+
               <div class="w-100 d-flex flex-column align-stretch justify-end" style="height: 60px;">
-                <v-btn 
-                  class="w-100 mt-3 mb-3 text-black rounded-lg elevation-0"
-                  variant="outlined"
-                  :ripple="false"
-                  v-if="!cartStore.cart.some(item => item._id === card._id)"
-                  @click="cartStore.addItem(card)"
-                >
+                <v-btn class="w-100 mt-3 mb-3 text-black rounded-lg elevation-0" variant="outlined" :ripple="false"
+                  v-if="!cartStore.cart.some(item => item._id === card._id)" @click="cartStore.addItem(card)">
                   Добавить
                 </v-btn>
-  
+
                 <v-row v-else class="justify-center align-center">
                   <v-col cols="auto">
-                    <v-btn variant="plain" :ripple="false" icon="mdi-minus" @click="cartStore.amountDown(card._id)"></v-btn>
+                    <v-btn variant="plain" :ripple="false" icon="mdi-minus"
+                      @click="cartStore.amountDown(card._id)"></v-btn>
                   </v-col>
-  
+
                   <v-col cols="3" class="text-center" style="font-family: 'Dela Gothic One';">
                     {{ cartStore.cart.find(milk => milk._id === card._id).amount }}
                   </v-col>
-  
+
                   <v-col cols="auto">
                     <v-btn variant="plain" :ripple="false" icon="mdi-plus" @click="cartStore.amountUp(card._id)"></v-btn>
                   </v-col>
@@ -74,19 +73,21 @@ onMounted(async () => {
         </v-card>
       </v-col>
     </v-row>
-    
+
     <v-row>
       <v-col class="d-flex justify-center" cols="12">
         <h3>Карта магазинов</h3>
       </v-col>
     </v-row>
   </v-container>
-    
+
   <div style="overflow: hidden;">
-    <a href="https://yandex.ru/maps/44/izhevsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">
+    <a href="https://yandex.ru/maps/44/izhevsk/?utm_medium=mapframe&utm_source=maps"
+      style="color:#eee;font-size:12px;position:absolute;top:0px;">
       Ижевск
     </a>
-    <a href="https://yandex.ru/maps/44/izhevsk/?ll=53.287342%2C56.880897&mode=usermaps&source=constructorLink&um=constructor%3Ab01ee8bc4a574f41b741e1503477625cbfa738f229e7bf365d7f5af115ae0982&utm_medium=mapframe&utm_source=maps&z=12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Карта Ижевска с улицами и номерами домов —
+    <a href="https://yandex.ru/maps/44/izhevsk/?ll=53.287342%2C56.880897&mode=usermaps&source=constructorLink&um=constructor%3Ab01ee8bc4a574f41b741e1503477625cbfa738f229e7bf365d7f5af115ae0982&utm_medium=mapframe&utm_source=maps&z=12"
+      style="color:#eee;font-size:12px;position:absolute;top:14px;">Карта Ижевска с улицами и номерами домов —
       Яндекс Карты
     </a>
     <iframe
