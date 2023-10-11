@@ -35,6 +35,13 @@ export const useProperty = defineStore('property', {
             } catch (error) {
                 console.log(error);
             }
+        },
+        async bookProperty(bookForm, property) {
+            try {
+                let response = await PropertyService.bookProperty(bookForm, property)
+            } catch (error) {
+                console.log(error);
+            }
         }
     }
 })

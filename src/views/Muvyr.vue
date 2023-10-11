@@ -12,7 +12,7 @@ let router = useRouter()
     </video>
 
     <v-container style="position: absolute; bottom: 0; left: 0; top: 0; right: 0;">
-      <div class="w-100 h-100 d-flex flex-column justify-space-between align-start">
+      <div class="w-100 h-100 d-flex flex-column justify-space-between align-start" style="gap: 18px;">
         <div></div>
         
         <div class="w-100">
@@ -47,7 +47,8 @@ let router = useRouter()
 .wrapper {
   width: 100vw;
   height: 100%;
-  background: #1d421e;
+  background: url(/startImg.webp) 50% top 80px no-repeat;
+  background-size: cover;
   position: relative;
 }
 .list {
@@ -82,8 +83,9 @@ let router = useRouter()
 }
 #myVideo {
   position: fixed;
-  right: 0;
-  bottom: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   min-width: 100%; 
   min-height: 100%;
 }

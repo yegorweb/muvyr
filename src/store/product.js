@@ -20,7 +20,7 @@ export const useProduct = defineStore('product', {
         async getAllProducts() {
             try {
                 let response = await ProductService.getAllProducts()
-                this.product = response.data
+                this.products = response.data
 
                 return
             } catch (error) {

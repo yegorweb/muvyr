@@ -13,8 +13,8 @@ let bookForm = reactive({
     peopleCount: ''
 })
 
-function sendRequest() {
-    console.log(bookForm);
+function sendRequest(property) {
+    propertyStore.bookProperty(bookForm, property)
 }
 
 onMounted(async () => {
@@ -48,34 +48,35 @@ onMounted(async () => {
                         </div>
                     </div>
                     <v-btn @click="bookModal = true">заказать</v-btn>
+
+                    <v-dialog width="500" v-model="bookModal">
+                        <v-card title="Заказать" class="pa-4">
+                            <v-row>
+                                <v-col cols="12">
+                                    Ваш email
+                                    <v-text-field v-model="bookForm.email"></v-text-field>
+                                </v-col>
+                            </v-row>
+                            <v-row>
+                                <v-col cols="12">
+                                    Телефон
+                                    <v-text-field v-model="bookForm.phone"></v-text-field>
+                                </v-col>
+                            </v-row>
+                            <v-row>
+                                <v-col cols="12">
+                                    Количетсво людей
+                                    <v-text-field v-model="bookForm.peopleCount"></v-text-field>
+                                </v-col>
+                            </v-row>
+                            <v-card-actions>
+                                <v-btn @click="sendRequest(card)">отправить</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
                 </v-card>
             </v-col>
         </v-row>
-        <v-dialog width="500" v-model="bookModal">
-            <v-card title="Заказать" class="pa-4">
-                <v-row>
-                    <v-col cols="12">
-                        Ваш email
-                        <v-text-field v-model="bookForm.email"></v-text-field>
-                    </v-col>
-                </v-row>
-                <v-row>
-                    <v-col cols="12">
-                        Телефон
-                        <v-text-field v-model="bookForm.phone"></v-text-field>
-                    </v-col>
-                </v-row>
-                <v-row>
-                    <v-col cols="12">
-                        Количетсво людей
-                        <v-text-field v-model="bookForm.peopleCount"></v-text-field>
-                    </v-col>
-                </v-row>
-                <v-card-actions>
-                    <v-btn @click="sendRequest">отправить</v-btn>
-                </v-card-actions>
-            </v-card>
-        </v-dialog>
     </v-container>
 </template>
 <style scoped>

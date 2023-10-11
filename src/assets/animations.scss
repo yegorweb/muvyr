@@ -115,13 +115,13 @@
 }
 
 .list-item-anim {
-    animation: 1s enter;
+    animation: 0.75s enter;
 }
 
 @for $i from 1 through 20 {
     .list-item-anim {
         &:nth-child(#{$i}) {
-            animation-delay: sqrt($i) * (1s / 5);
+            animation-delay: sqrt($i) * calc(1s / 5);
         }
     }
 }
