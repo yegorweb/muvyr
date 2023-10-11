@@ -7,7 +7,7 @@ import Header from '@/components/Header.vue';
   <v-app>
     <Header />
 
-    <v-main>
+    <v-main style="padding-bottom: 80px;">
       <router-view v-slot="{ Component }">
         <transition name="fade">
           <component :is="Component" />
