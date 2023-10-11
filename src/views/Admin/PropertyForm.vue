@@ -5,6 +5,12 @@ import ImageCropper from '../../components/ImageCropper.vue'
 import { QuillEditor } from "@vueup/vue-quill";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 
+import { useRouter } from 'vue-router';
+
+import { useProperty } from '@/store/property';
+
+const router = useRouter()
+
 const options = reactive({
     theme: 'snow',
     modules: {
@@ -24,6 +30,8 @@ const options = reactive({
         },
     },
 })
+
+let propertyStore = useProperty()
 
 let visibleCropperModal = ref(false)
 let previews = ref([])
@@ -60,6 +68,22 @@ let form = reactive({
     price: null,
     images: '',
 })
+async function submit() {
+    let _id = await propertyStore.createProperty(form)
+
+    let imagesFormData = new FormData();
+    for (let i = 0; i < blobImages.length; i++) {
+        imagesFormData.append(
+            "poster-image",
+            new File([blobImages[i]], _id + "_" + i + ".jpg"),
+            _id + "_" + i + ".jpg"
+        );
+    }
+    propertyStore.uploadPropertyImages(imagesFormData).then(() => {
+        console.log('фотографии загружены')
+    })
+    router.push('/admin')
+}
 </script>
 <template>
     <v-container>
@@ -94,7 +118,7 @@ let form = reactive({
         </v-row>
         <v-row class="d-flex">
             <v-col cols="12" md="4">
-                <v-btn> добавить афишу<span>*</span>
+                <v-btn> добавить фото
                     <v-dialog v-model="visibleCropperModal" activator="parent">
                         <v-row class="justify-center">
                             <v-col cols="12" md="8" lg="6">
@@ -113,8 +137,8 @@ let form = reactive({
                 </v-btn>
             </v-col>
         </v-row>
-        <v-row v-for="preview in previews" class="d-flex">
-            <v-col class="d-flex" cols="12" sm="6" md="4">
+        <v-row>
+            <v-col v-for="preview in previews" class="d-flex" cols="12" sm="6" md="4">
                 <v-img :src="preview" width="200" class="my-2">
                     <v-overlay :open-on-click="true" contained class="align-center justify-center" activator="parent">
                         <v-btn color="error" @click="deletePreview(preview)" icon>
@@ -122,6 +146,11 @@ let form = reactive({
                         </v-btn>
                     </v-overlay>
                 </v-img>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="12" class="d-flex justify-center">
+                <v-btn @click="submit">отправить</v-btn>
             </v-col>
         </v-row>
     </v-container>

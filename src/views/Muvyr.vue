@@ -43,7 +43,7 @@ let router = useRouter()
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .wrapper {
   width: 100vw;
   height: 100%;

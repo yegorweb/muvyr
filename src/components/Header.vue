@@ -24,10 +24,10 @@ let router = useRouter()
     </v-app-bar>
 </template>
 
-<style>
+<style scoped>
 .logo-text {
     font-family: Marmelad;
-    color: #000;
+    color: #000000;
     margin-left: 18px;
     font-size: 26px;
 }
