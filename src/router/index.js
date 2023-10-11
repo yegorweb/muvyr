@@ -90,6 +90,11 @@ const routes = [
             path: 'product',
             name: 'Product',
             component: () => import('@/views/Admin/Product.vue')
+          },
+          {
+            path: 'event',
+            name: 'event',
+            component: () => import('@/views/Admin/Event.vue')
           }
         ]
       },

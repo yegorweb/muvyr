@@ -80,7 +80,7 @@ onMounted(async () => {
     <v-row class="mt-3">
         <v-col cols="12">
             <v-btn to="/admin/property-form">
-                добавить обьект
+                создать обьект
             </v-btn>
         </v-col>
     </v-row>

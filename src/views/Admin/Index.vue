@@ -26,7 +26,7 @@ import BackButton from '@/components/BackButton.vue';
                                 </v-list-item>
                             </v-col>
                             <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/property-fo">
+                                <v-list-item class="cursor-pointer" to="/admin/event">
                                     Мероприятия
                                 </v-list-item>
                             </v-col>
