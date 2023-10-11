@@ -3,58 +3,58 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-      path: '/',
-      name: 'Muvyr',
-      component: () => import(/* webpackChunkName: "home" */ '@/views/Muvyr.vue'),
-  },
-  {
     path: '/',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
-        path: '/excursions',
-        name: 'Excursions',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Excursions.vue'),
+        path: '',
+        name: 'Muvyr',
+        component: () => import('@/views/Muvyr.vue'),
       },
       {
         path: '/excursions',
         name: 'Excursions',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Excursions.vue'),
+        component: () => import('@/views/Excursions.vue'),
+      },
+      {
+        path: '/excursions',
+        name: 'Excursions',
+        component: () => import('@/views/Excursions.vue'),
       },
       {
         path: '/transport-rent',
         name: 'TransportRent',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/TransportRent.vue'),
+        component: () => import('@/views/TransportRent.vue'),
       },
       {
         path: '/property-rent',
         name: 'PropertyRent',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/PropertyRent.vue'),
+        component: () => import('@/views/PropertyRent.vue'),
       },
       {
         path: '/milk',
         name: 'Milk',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Milk.vue'),
+        component: () => import('@/views/Milk.vue'),
       },
       {
         path: '/wedding',
         name: 'Wedding',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Wedding.vue'),
+        component: () => import('@/views/Wedding.vue'),
       },
       {
         path: '/events',
         name: 'Events',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Events.vue'),
+        component: () => import('@/views/Events.vue'),
       },
       {
         path: '/investors',
         name: 'Investors',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Investors.vue'),
+        component: () => import('@/views/Investors.vue'),
       },
       {
         path: '/contacts',
         name: 'Contacts',
-        component: () => import(/* webpackChunkName: "home" */ '@/views/Contacts.vue'),
+        component: () => import('@/views/Contacts.vue'),
       },
       {
         path: '/admin',

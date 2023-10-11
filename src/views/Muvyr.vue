@@ -12,10 +12,10 @@ let router = useRouter()
       Your browser does not support HTML5 video.
     </video>
 
-    <v-container style="height: 100vh !important; position: relative; bottom: 0; left: 0; top: 0; right: 0;">
+    <v-container style="position: absolute; bottom: 0; left: 0; top: 0; right: 0;">
       <div class="w-100 h-100 d-flex flex-column justify-space-between align-start">
-        <HeaderForHome />
-          
+        <div></div>
+        
         <div class="w-100">
           <v-row class="justify-center">
             <v-col cols="auto">
@@ -42,8 +42,8 @@ let router = useRouter()
 
 <style lang="scss">
 .wrapper {
-  min-height: 100dvh;
-  min-width: 100vw;
+  width: 100vw;
+  height: calc(100vh - 80px);
   background: #1d421e;
   position: relative;
 }
@@ -53,13 +53,14 @@ let router = useRouter()
 .list > * {
   color: #fff;
   font-family: 'Marmelad';
-  font-size: clamp(1rem, -0.0294rem + 2.9412vw, 1.625rem);
+  font-size: clamp(1rem, 0.294rem + 2.9412vw, 1.625rem);
   cursor: pointer;
   line-height: 1.5;
+  user-select: none;
   transition: all .15s;
 
   &:hover {
-    color: #96c097;
+    color: #afd4b0;
   }
 }
 .gray-container {
@@ -69,8 +70,9 @@ let router = useRouter()
 }
 .title {
   padding: 16px;
-  line-height: 0.85;
-  font-family: 'Marmelad', cursive;
+  line-height: 1;
+  font-family: 'Dela Gothic One', cursive;
+  user-select: none;
   font-size: clamp(1.75rem, -3.6029rem + 15.2941vw, 5rem);
   color: #FFFFFF;
   text-align: center;
