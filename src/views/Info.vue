@@ -55,7 +55,7 @@ h1 {
 .wrapper {
     width: 100vw;
     min-height: 80vh;
-    padding: 40px 0;
+    padding: 40px 20px;
     color: #FFFFFF;
     text-align: center;
     display: flex;
@@ -69,7 +69,7 @@ h1 {
     }
 }
 .section {
-    padding: 60px 0;
+    padding: 60px 20px;
     color: #000000;
     text-align: center;
     display: flex;
