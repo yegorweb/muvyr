@@ -11,7 +11,7 @@ let router = useRouter()
                 <div class="d-flex align-center cursor-pointer" @click="router.push('/')">
                     <img src="@/assets/logo.svg" style="height: 40px;" alt="">
                     
-                    <span class="logo-text">МУВЫР</span>
+                    <span class="logo-text" style="user-select: none;">МУВЫР</span>
                 </div>
                 
                 <v-app-bar-nav-icon></v-app-bar-nav-icon>

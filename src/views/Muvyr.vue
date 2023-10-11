@@ -56,6 +56,7 @@ let router = useRouter()
   font-size: clamp(1rem, -0.0294rem + 2.9412vw, 1.625rem);
   cursor: pointer;
   line-height: 1.5;
+  user-select: none;
   transition: all .15s;
 
   &:hover {
@@ -71,6 +72,7 @@ let router = useRouter()
   padding: 16px;
   line-height: 0.85;
   font-family: 'Marmelad', cursive;
+  user-select: none;
   font-size: clamp(1.75rem, -3.6029rem + 15.2941vw, 5rem);
   color: #FFFFFF;
   text-align: center;
