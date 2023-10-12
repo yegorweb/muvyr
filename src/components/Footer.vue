@@ -32,6 +32,7 @@ let router = useRouter()
     background: #242424;
 }
 .link {
+    user-select: none;
     color: #FFFFFF;
     padding: 4px;
     cursor: pointer;
