@@ -29,21 +29,29 @@ onMounted(async () => {
         <v-col cols="12" class="text-center" style="font-size: 35px;">
           <span style="font-family: 'Dela Gothic One';">Молоко</span>
         </v-col>
-        <v-col cols="12" class="d-flex justify-end">
-          <div class="d-flex align-center mx-4 font-weight-medium">
+      </v-row>
+
+      <v-row class="align-center justify-end">
+        <v-col cols="auto">
+          <div class="d-flex align-center font-weight-medium">
             Сумма заказа: 4000 руб
           </div>
+        </v-col>
+
+        <v-col cols="auto" class="d-flex align-center">
           <div>
-            <VueDatePicker locale="ru" class="mb-1" minutes-grid-increment="2" input-class-name="dp-custom-input"
+            <VueDatePicker locale="ru" minutes-grid-increment="2" input-class-name="dp-custom-input"
               placeholder="дата доставки" :transitions="{
                 open: 'fade',
                 close: 'fade',
               }" />
           </div>
-          <div class="d-flex align-center mx-4">
-            <v-btn>отправить</v-btn>
-          </div>
+
+          <v-btn variant="outlined" class="ml-4">заказать</v-btn>
         </v-col>
+      </v-row>
+
+      <v-row>
         <v-col cols="12" sm="6" md="4" lg="3" v-for="card in products">
           <v-card class="h-100 d-flex flex-column">
             <v-col class="pa-0">
