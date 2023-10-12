@@ -95,8 +95,8 @@ let products = ref(productStore.products);
       </v-row>
 
       <v-row>
-        <v-col class="d-flex justify-center" cols="12">
-          <h3>Карта магазинов</h3>
+        <v-col class="d-flex justify-center mt-10" cols="12">
+          <h2>Карта магазинов</h2>
         </v-col>
       </v-row>
     </v-container>
