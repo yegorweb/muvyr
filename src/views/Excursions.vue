@@ -1,7 +1,7 @@
 <script setup>
 import BackButton from "@/components/BackButton.vue";
 import { ref } from "vue";
-let transports = ref([{
+let excusrions = ref([{
   title: 'Экскурсия по возрожденной деревне с питанием',
   image: "https://thumb.tildacdn.com/tild3063-3938-4463-b761-656430626635/-/cover/432x475/center/center/-/format/webp/b036r3OXf0E.jpg",
   description: "",
@@ -34,7 +34,7 @@ let transports = ref([{
       <v-col cols="12" class="text-center" style="font-size: 35px;">
         <span style="font-family: 'Dela Gothic One';">Экскурсии</span>
       </v-col>
-      <v-col cols="12" sm="4" md="3" v-for="card in transports">
+      <v-col cols="12" sm="4" md="3" v-for="card in excusrions">
         <v-card class="h-100 d-flex flex-column">
           <v-col class="pa-0">
             <div :style="`aspect-ratio: 1/1; background: url(${card.image}) 50% 50% no-repeat; background-size: cover;`">
