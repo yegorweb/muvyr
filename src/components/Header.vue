@@ -25,7 +25,7 @@ let drawer = ref(false)
             </div>
         </v-container>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" location="right" temporary>
+    <v-navigation-drawer v-model="drawer" location="right" elevation="0" temporary>
         <v-list>
             <v-list-item class="cursor-pointer" to="/admin" exact :ripple="false">
                 Админ
@@ -71,5 +71,6 @@ let drawer = ref(false)
 
 .v-navigation-drawer {
     height: 70% !important;
+    border-radius: 0 0 0 12px;
 }
 </style>
