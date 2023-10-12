@@ -36,11 +36,11 @@ onMounted(async () => {
     <v-container>
         <back-button></back-button>
 
-        <v-row v-if="property._id">
+        <v-row v-if="property._id" class="mt-1">
             <v-col cols="12" md="6">
                 <v-carousel class="h-100" hide-delimiter-background hide-delimiters show-arrows="hover">
                     <v-carousel-item v-for="item in property.images">
-                        <v-img :src="item"></v-img>
+                        <v-img style="border-radius: 8px;" :src="item"></v-img>
                     </v-carousel-item>
                 </v-carousel>
             </v-col>
