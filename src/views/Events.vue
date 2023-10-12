@@ -81,7 +81,7 @@ let events = ref([
 <template>
   <v-container>
     <v-row class="d-flex justify-center">
-      <v-col class="pa-0" cols="12">
+      <v-col cols="12">
         <back-button></back-button>
       </v-col>
     </v-row>
