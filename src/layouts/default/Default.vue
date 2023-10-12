@@ -9,7 +9,7 @@ import Header from '@/components/Header.vue';
 
     <v-main style="padding-bottom: 80px;">
       <router-view v-slot="{ Component }">
-        <transition name="fade">
+        <transition name="fade" :duration="{ enter: 200, leave: 100 }">
           <component :is="Component" />
         </transition>
       </router-view>
