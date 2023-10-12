@@ -11,6 +11,27 @@ let productStore = useProduct()
 let cartStore = useCart()
 
 let products = ref(productStore.products);
+
+let date = ref(null)
+
+async function submit() {
+  let total = []
+  cartStore.cart.map(item => total.push(`${item.mass} x ${item.amount}`))
+  total = total.join(', ')
+
+  await productStore.createOrder({
+    date: new Date().toLocaleDateString(),
+    orderDate: new Date(date.value).toLocaleDateString(),
+    goods: cartStore.cart,
+    packaging: total,
+    shopTitle: 'Карамель',
+    shopAddress: 'г.Ижевск, ул.Ракетная, 24',
+    sum: cartStore.total
+  }).then(() => {
+    date.value = null
+    cartStore.dropCart()
+  })
+}
 </script>
 
 <template>
@@ -33,14 +54,14 @@ let products = ref(productStore.products);
 
         <v-col cols="auto" class="d-flex align-center">
           <div>
-            <VueDatePicker locale="ru" minutes-grid-increment="2" input-class-name="dp-custom-input"
+            <VueDatePicker v-model="date" locale="ru" minutes-grid-increment="2" input-class-name="dp-custom-input"
               placeholder="дата доставки" :transitions="{
                 open: 'fade',
                 close: 'fade',
               }" />
           </div>
 
-          <v-btn variant="outlined" class="ml-4">заказать</v-btn>
+          <v-btn @click="submit" variant="outlined" class="ml-4" :disabled="!date">заказать</v-btn>
         </v-col>
       </v-row>
 

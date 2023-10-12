@@ -26,5 +26,22 @@ export const useProduct = defineStore('product', () => {
         }
     }
 
-    return { products, createProduct, getAllProducts }
+    async function getAllOrders() {
+        try {
+            let response = await ProductService.getAllOrders()
+            return response.data
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function createOrder(order) {
+        try {
+            let response = await ProductService.createOrder(order)
+        } catch (error) {
+            console.log(error);
+        }
+    }    
+
+    return { products, createProduct, getAllProducts, createOrder, getAllOrders }
 })

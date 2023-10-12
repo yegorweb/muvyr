@@ -1,6 +1,10 @@
 <script setup>
+import { useProduct } from '@/store/product';
 import { ref } from 'vue'
 // date, title, фасовка, точка, ее адрес
+
+let orders = await useProduct().getAllOrders()
+
 let productRequests = ref([
     {
         date: '10/11/2023',
@@ -73,12 +77,12 @@ let productRequests = ref([
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="request in productRequests">
+                    <tr v-for="request in orders">
                         <td>{{ request.date }}</td>
                         <td>{{ request.orderDate }}</td>
                         <td>
-                            <span v-for="good in request.goods" class="mx-2">
-                                {{ good.title }} {{ good.price }} x {{ good.count }}
+                            <span v-for="good in request.goods" class="mr-2">
+                                {{ good.title }} {{ good.price }} руб x {{ good.amount }}
                             </span>
                         </td>
                         <td>{{ request.packaging }}</td>

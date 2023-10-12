@@ -6,5 +6,11 @@ export default {
     },
     getAllProducts() {
         return $api.post('/product/get-all-products')
-    }
+    },
+    getAllOrders() {
+        return $api.post('/product/get-all-product-orders')
+    },
+    createOrder(order) {
+        return $api.post('/product/create-product-order', order)
+    },
 }
