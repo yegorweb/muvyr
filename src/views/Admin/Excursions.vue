@@ -1,6 +1,6 @@
 <script setup>
 import { useProduct } from '@/store/product';
-import { VueDatePicker } from '@vuepic/vue-datepicker';
+// import { VueDatePicker } from '@vuepic/vue-datepicker';
 import { watch } from 'vue';
 import { ref } from 'vue';
 
