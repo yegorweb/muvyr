@@ -1,6 +1,11 @@
 <script setup>
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
+import { useProduct } from '@/store/product'
+import { useProperty } from '@/store/property'
+
+await useProduct().getAllProducts()
+await useProperty().getAllProperty()
 </script>
 
 <template>
