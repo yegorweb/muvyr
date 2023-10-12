@@ -91,7 +91,7 @@ let events = ref([
       </v-col>
     </v-row>
     <v-row class="d-flex justify-center">
-      <v-col cols="10" v-for="event of events">
+      <v-col cols="10" lg="8" v-for="event of events">
         <v-card class="h-100 d-flex flex-column">
           <v-row>
             <v-col cols="12" md="6" lg="4">
