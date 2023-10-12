@@ -32,9 +32,13 @@ let list = ref([{
 <template>
     <v-row>
         <v-col cols="12">
-            Журнал проката
+            Журнал объектов проката
         </v-col>
-
+        <v-col cols="12">
+            <v-btn to="/admin/product-form">
+                + добавить
+            </v-btn>
+        </v-col>
         <v-col cols="12">
             <v-table>
                 <thead>
@@ -66,13 +70,6 @@ let list = ref([{
                     </tr>
                 </tbody>
             </v-table>
-            <v-row>
-                <v-col cols="12" class="mt-3">
-                    <v-btn to="/admin/product-form">
-                        создать Объект проката
-                    </v-btn>
-                </v-col>
-            </v-row>
         </v-col>
     </v-row>
 </template>
