@@ -19,7 +19,8 @@ let router = useRouter()
                             <v-col cols="12">Кабинет администратора</v-col>
                         </v-row>
                         <v-row class="d-flex pa-0">
-                            <v-col cols="12" style="display: flex; flex-direction: row; overflow-x: scroll;">
+                            <v-col cols="12"
+                                style="display: flex; flex-direction: row; overflow-x: scroll; font-weight: bold">
                                 <v-list-item class="cursor-pointer mr-2" to="/admin"
                                     :active="router.currentRoute.value.path == '/admin'">
                                     Домики
