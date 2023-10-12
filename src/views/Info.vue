@@ -53,6 +53,7 @@ h1 {
     font-size: 56px;
 }
 .wrapper {
+    background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 40%);
     width: 100vw;
     min-height: 80vh;
     padding: 40px 20px;
