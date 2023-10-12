@@ -10,7 +10,7 @@ let router = useRouter()
 
 <template>
   <div class="wrapper">
-    <video autoplay muted loop preload="none" id="myVideo">
+    <video autoplay muted loop preload="none" id="myVideo" controls="false" playsinline>
       <source src="https://storage.yandexcloud.net/goroda-img/temp-plakat-city/video.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
