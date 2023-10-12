@@ -16,7 +16,9 @@ let router = useRouter()
                 <v-list nav>
                     <v-container>
                         <v-row class="pa-0">
-                            <v-col cols="12">Кабинет администратора</v-col>
+                            <v-col cols="12" class="text-center" style="font-size: 35px;">
+                                <span style="font-family: 'Dela Gothic One';">Кабинет админа</span>
+                            </v-col>
                         </v-row>
                         <v-row class="d-flex pa-0">
                             <v-col cols="12"
