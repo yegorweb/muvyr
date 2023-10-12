@@ -37,10 +37,6 @@ let list = ref([{
     email: 'egorkaknazz@gmail.com',
     phone: '89336322291',
 }])
-
-onMounted(async () => {
-    await propertyStore.getAllProperty();
-})
 </script>
 <template>
     <v-row>
