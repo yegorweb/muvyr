@@ -81,9 +81,10 @@ let events = ref([
 <template>
   <v-container>
     <v-row class="d-flex justify-center">
-      <v-col cols="10">
+      <v-col class="pa-0" cols="10">
         <back-button></back-button>
-      </v-col></v-row>
+      </v-col>
+    </v-row>
     <v-row>
       <v-col cols="12" class="text-center" style="font-size: 35px;">
         <span style="font-family: 'Dela Gothic One';">Мероприятия</span>
@@ -93,10 +94,10 @@ let events = ref([
       <v-col cols="10" v-for="event of events">
         <v-card class="h-100 d-flex flex-column">
           <v-row>
-            <v-col cols="4">
+            <v-col cols="12" md="6" lg="4">
               <v-img :src="event.image"></v-img>
             </v-col>
-            <v-col cols="8">
+            <v-col cols="12" md="6" lg="8">
               <div class="pa-4">
                 <h2>{{ event.title }}</h2>
                 <div class="">Тип события: {{ event.eventType }}</div>
