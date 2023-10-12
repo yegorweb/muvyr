@@ -10,7 +10,7 @@ let router = useRouter()
 
 <template>
   <div class="wrapper">
-    <video autoplay muted loop preload="none" id="myVideo">
+    <video autoplay muted loop preload="none" id="myVideo" controls="false" playsinline>
       <source src="https://storage.yandexcloud.net/goroda-img/temp-plakat-city/video.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
@@ -50,7 +50,7 @@ let router = useRouter()
 <style scoped lang="scss">
 .wrapper {
   width: 100vw;
-  height: calc(100vh - 60px);
+  height: calc(100dvh - 60px);
   background: url(/startImg.webp) 50% top 80px no-repeat;
   background-size: cover;
   position: relative;

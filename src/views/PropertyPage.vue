@@ -36,11 +36,11 @@ onMounted(async () => {
     <v-container>
         <back-button></back-button>
 
-        <v-row v-if="property._id">
+        <v-row v-if="property._id" class="mt-1">
             <v-col cols="12" md="6">
                 <v-carousel class="h-100" hide-delimiter-background hide-delimiters show-arrows="hover">
                     <v-carousel-item v-for="item in property.images">
-                        <v-img :src="item"></v-img>
+                        <v-img style="border-radius: 8px;" :src="item"></v-img>
                     </v-carousel-item>
                 </v-carousel>
             </v-col>
@@ -68,25 +68,33 @@ onMounted(async () => {
                 <div class="mt-6">
                     <v-btn @click="bookModal = true">заказать</v-btn>
                 </div>
+            </v-col>
+        </v-row>
 
-                <v-dialog width="500" v-model="bookModal">
-                    <v-card title="Заказать" class="pa-4">
-                        <v-row>
+        <v-dialog v-model="bookModal">
+            <v-container class="d-flex justify-center">
+                <v-col cols="12" md="8" lg="4" class="pa-0">
+                    <v-card class="pt-4 pb-6 pr-6 pl-6 rounded-lg">
+                        <h3 class="w-100 text-center">
+                            Заказать
+                        </h3>
+    
+                        <v-row class="mt-2">
                             <v-col cols="12">
                                 Ваш email
-                                <v-text-field v-model="bookForm.email"></v-text-field>
+                                <v-text-field variant="outlined" density="compact" v-model="bookForm.email" hide-details></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="12">
                                 Телефон
-                                <v-text-field v-model="bookForm.phone"></v-text-field>
+                                <v-text-field variant="outlined" density="compact" v-model="bookForm.phone" hide-details></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="12">
                                 Количество людей
-                                <v-text-field v-model="bookForm.peopleCount"></v-text-field>
+                                <v-text-field variant="outlined" density="compact" v-model="bookForm.peopleCount" hide-details></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -110,13 +118,17 @@ onMounted(async () => {
                             </v-col>
                         </v-row>
                         <v-row>
-                            <v-col>
-                                <v-btn @click="sendRequest">отправить</v-btn>
+                            <v-col cols="auto">
+                                <v-btn variant="outlined" :ripple="false" @click="sendRequest">отправить</v-btn>
+                            </v-col>
+
+                            <v-col cols="auto">
+                                <v-btn @click="bookModal = false" :ripple="false" variant="plain">закрыть</v-btn>
                             </v-col>
                         </v-row>
                     </v-card>
-                </v-dialog>
-            </v-col>
-        </v-row>
+                </v-col>
+            </v-container>
+        </v-dialog>
     </v-container>
 </template>
