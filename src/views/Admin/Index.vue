@@ -1,5 +1,9 @@
 <script setup>
 import BackButton from '@/components/BackButton.vue';
+import { useRouter } from "vue-router"
+
+
+let router = useRouter()
 </script>
 <template>
     <v-container>
@@ -15,33 +19,24 @@ import BackButton from '@/components/BackButton.vue';
                             <v-col cols="12">Кабинет администратора</v-col>
                         </v-row>
                         <v-row class="d-flex pa-0">
-                            <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin" :active="false">
+                            <v-col cols="12" style="display: flex; flex-direction: row; overflow-x: scroll;">
+                                <v-list-item class="cursor-pointer mr-2" to="/admin"
+                                    :active="router.currentRoute.value.path == '/admin'">
                                     Домики
                                 </v-list-item>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/product">
+                                <v-list-item class="cursor-pointer mr-2" to="/admin/product">
                                     Молоко
                                 </v-list-item>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/excursions">
+                                <v-list-item class="cursor-pointer mr-2" to="/admin/excursions">
                                     Экскурсии
                                 </v-list-item>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/transport-rent">
+                                <v-list-item class="cursor-pointer mr-2" to="/admin/transport-rent">
                                     Прокат
                                 </v-list-item>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/weddings">
+                                <v-list-item class="cursor-pointer mr-2" to="/admin/weddings">
                                     Свадьбы
                                 </v-list-item>
-                            </v-col>
-                            <v-col cols="4">
-                                <v-list-item class="cursor-pointer" to="/admin/event">
+                                <v-list-item class="cursor-pointer mr-2" to="/admin/event">
                                     Мероприятия
                                 </v-list-item>
                             </v-col>
