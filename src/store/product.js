@@ -1,31 +1,30 @@
 import { defineStore } from 'pinia'
 import ProductService from '@/service/ProductService'
+import { ref } from 'vue'
 
-export const useProduct = defineStore('product', {
-    state: () => ({
-        products: []
-    }),
-    getters: {
-    },
-    actions: {
-        async createProduct(newProduct) {
-            try {
-                let response = await ProductService.createProduct(newProduct)
+export const useProduct = defineStore('product', () => {
+    let products = ref([])
 
-                return response.data._id
-            } catch (error) {
-                console.log(error);
-            }
-        },
-        async getAllProducts() {
-            try {
-                let response = await ProductService.getAllProducts()
-                this.products = response.data
+    async function createProduct(newProduct) {
+        try {
+            let response = await ProductService.createProduct(newProduct)
 
-                return
-            } catch (error) {
-                console.log(error);
-            }
-        },
+            return response.data._id
+        } catch (error) {
+            console.log(error);
+        }
     }
+
+    async function getAllProducts() {
+        try {
+            let response = await ProductService.getAllProducts()
+            products.value = response.data
+
+            return
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    return { products, createProduct, getAllProducts }
 })
