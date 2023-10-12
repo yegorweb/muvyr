@@ -18,3 +18,30 @@ body {
     border-radius: 20px; /* округлось бегунка */
     background-color: rgb(235, 235, 235);
 }
+
+video::-webkit-media-controls {
+    display: none !important;
+    -webkit-appearance: none;
+    opacity: 0
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+    -webkit-appearance: none;
+    opacity: 0
+}
+
+video::-webkit-media-controls-panel {
+    display: none !important;
+    -webkit-appearance: none
+}
+
+video::--webkit-media-controls-play-button {
+    display: none !important;
+    -webkit-appearance: none
+}
+
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none
+}
