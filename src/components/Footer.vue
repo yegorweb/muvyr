@@ -32,7 +32,6 @@ let router = useRouter()
     background: #242424;
 }
 .link {
-    font-family: 'Dela Gothic One';
     color: #FFFFFF;
     padding: 4px;
     cursor: pointer;
