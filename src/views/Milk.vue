@@ -1,10 +1,8 @@
 <script setup>
-import { onMounted } from "vue";
 import { useProduct } from '../store/product'
 import { ref } from "vue";
 import { useCart } from "@/store/cart";
 import BackButton from "@/components/BackButton.vue";
-
 
 import VueDatePicker from '@vuepic/vue-datepicker'
 import "@vuepic/vue-datepicker/dist/main.css";
@@ -12,12 +10,7 @@ import "@vuepic/vue-datepicker/dist/main.css";
 let productStore = useProduct()
 let cartStore = useCart()
 
-let products = ref([]);
-
-onMounted(async () => {
-  await productStore.getAllProducts();
-  products.value = productStore.products
-})
+let products = ref(productStore.products);
 </script>
 
 <template>
@@ -63,7 +56,7 @@ onMounted(async () => {
             <div class="w-100 h-100 pl-4 pt-4 pr-4 d-flex flex-column justify-space-between">
               <div>
                 <h3>{{ card.title }}</h3>
-                {{ card.description }}
+                <div style="line-height: 1.3;">{{ card.description }}</div>
               </div>
 
               <div class="mt-3">

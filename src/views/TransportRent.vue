@@ -44,7 +44,7 @@ let transports = ref([{
           <div class="w-100 h-100 pa-4 d-flex flex-column justify-space-between">
             <div>
               <h3>{{ card.title }}</h3>
-              <div class="mt-1">
+              <div class="mt-1" style="line-height: 1.3;">
                 {{ card.description }}
               </div>
             </div>
