@@ -48,7 +48,7 @@ let transports = ref([{
                 {{ card.description }}
               </div>
             </div>
-            <div>Цена:
+            <div class="mt-2">Цена:
               <b>{{ card.price }}</b>
             </div>
           </div>
