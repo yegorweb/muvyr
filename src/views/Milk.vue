@@ -82,7 +82,7 @@ async function submit() {
 
               <div class="mt-3">
                 <div>Цена:
-                  <b>{{ card.price }}</b>
+                  <b>{{ card.price }}</b> руб
                 </div>
                 <div v-if="card.mass?.length">
                   <b>{{ card.mass }}</b>
