@@ -36,5 +36,9 @@ export const useCart = defineStore('cart', () => {
         return cart.value.find(milk => milk._id)
     }
 
-    return { cart, total, addItem, removeItem, amountUp, amountDown, getItem }
+    function dropCart() {
+        cart.value = []
+    }
+
+    return { cart, total, addItem, removeItem, amountUp, amountDown, getItem, dropCart }
 })
