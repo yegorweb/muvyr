@@ -53,16 +53,18 @@ onMounted(async () => {
                 <div>
                     Цена: <b>{{ property.price }}</b>
                 </div>
-                Даты: <br />
-                <v-chip v-for="book in property.bookedBy" style="font-size: 17px;">
-                    <b>
-                        {{ book.startBooking }}
-                    </b>
-                    -
-                    <b>
-                        {{ book.endBooking }}
-                    </b>
-                </v-chip>
+                <div v-if="property.bookedBy.length > 0">
+                    Даты: <br />
+                    <v-chip v-for="book in property.bookedBy" style="font-size: 17px;">
+                        <b>
+                            {{ book.startBooking }}
+                        </b>
+                        -
+                        <b>
+                            {{ book.endBooking }}
+                        </b>
+                    </v-chip>
+                </div>
                 <div class="mt-6">
                     <v-btn @click="bookModal = true">заказать</v-btn>
                 </div>
