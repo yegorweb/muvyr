@@ -43,18 +43,21 @@ let transports = ref([{
 
           <div class="w-100 h-100 pa-4 d-flex flex-column justify-space-between">
             <div>
-              <h3>{{ card.title }}</h3>
+              <h3 style="line-height: 1.3;">{{ card.title }}</h3>
               <div class="mt-1">
                 {{ card.description }}
               </div>
             </div>
-            <div>Цена:
-              <b>{{ card.price }}</b>
-            </div>
 
-            <v-btn class="w-100 mt-3 text-black rounded-lg elevation-0" variant="outlined" :ripple="false">
-              Заказать
-            </v-btn>
+            <div class="w-100">
+              <div class="mt-2">Цена:
+                <b>{{ card.price }}</b>
+              </div>
+  
+              <v-btn class="w-100 mt-3 text-black rounded-lg elevation-0" variant="outlined" :ripple="false">
+                Заказать
+              </v-btn>
+            </div>
           </div>
         </v-card>
       </v-col>
