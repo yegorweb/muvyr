@@ -95,7 +95,7 @@ let events = ref([
         <v-card class="h-100 d-flex flex-column">
           <v-row>
             <v-col cols="12" md="6" lg="4">
-              <v-img :src="event.image"></v-img>
+              <v-img style="border-radius: 0 0 12px 0;" :src="event.image"></v-img>
             </v-col>
             <v-col cols="12" md="6" lg="8">
               <div class="pa-4">
