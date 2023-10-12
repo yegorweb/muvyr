@@ -27,7 +27,7 @@ let products = ref(productStore.products);
       <v-row class="align-center justify-end">
         <v-col cols="auto">
           <div class="d-flex align-center font-weight-medium">
-            Сумма заказа: 4000 руб
+            Сумма заказа: {{ cartStore.total }} руб
           </div>
         </v-col>
 

@@ -3,9 +3,13 @@ import { ref, watch } from 'vue'
 
 export const useCart = defineStore('cart', () => {
     let cart = ref(localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [])
+    let total = ref(0)
+    cart.value.map(item => total.value += item.price * item.amount)
 
     watch(cart, (value) => {
         localStorage.setItem('cart', JSON.stringify(value))
+        total.value = 0
+        cart.value.map(item => total.value += item.price * item.amount)
     }, { deep: true })
 
     function addItem(item) {
@@ -32,5 +36,5 @@ export const useCart = defineStore('cart', () => {
         return cart.value.find(milk => milk._id)
     }
 
-    return { cart, addItem, removeItem, amountUp, amountDown, getItem }
+    return { cart, total, addItem, removeItem, amountUp, amountDown, getItem }
 })
