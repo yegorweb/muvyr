@@ -43,45 +43,54 @@ onMounted(async () => {
 })
 </script>
 <template>
-    <v-table>
-        <thead>
-            <tr>
-                <th class="text-left">
-                    Дата заявки
-                </th>
-                <th class="text-left">
-                    Название
-                </th>
-                <th class="text-left">
-                    Период
-                </th>
-                <th class="text-left">
-                    Имя покупателя
-                </th>
-                <th class="text-left">
-                    Почта
-                </th>
-                <th class="text-left">
-                    Телефон
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="item in list">
-                <td>{{ item.data }}</td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.period }}</td>
-                <td>{{ item.customer }}</td>
-                <td>{{ item.email }}</td>
-                <td>{{ item.phone }}</td>
-            </tr>
-        </tbody>
-    </v-table>
-    <v-row class="mt-3">
+    <v-row>
         <v-col cols="12">
-            <v-btn to="/admin/property-form">
-                создать обьект
-            </v-btn>
+            <div>Журнал бронирования</div>
+        </v-col>
+
+        <v-col cols="12">
+            <v-table>
+                <thead>
+                    <tr>
+                        <th class="text-left">
+                            Дата заявки
+                        </th>
+                        <th class="text-left">
+                            Название
+                        </th>
+                        <th class="text-left">
+                            Период
+                        </th>
+                        <th class="text-left">
+                            Имя покупателя
+                        </th>
+                        <th class="text-left">
+                            Почта
+                        </th>
+                        <th class="text-left">
+                            Телефон
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in list">
+                        <td>{{ item.data }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.period }}</td>
+                        <td>{{ item.customer }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.phone }}</td>
+                    </tr>
+                </tbody>
+            </v-table>
+            <v-row class="mt-3">
+                <v-col cols="12">
+                    <v-btn to="/admin/property-form">
+                        создать обьект
+                    </v-btn>
+                </v-col>
+            </v-row>
         </v-col>
     </v-row>
+
 </template>
