@@ -51,6 +51,10 @@ let transports = ref([{
             <div>Цена:
               <b>{{ card.price }}</b>
             </div>
+
+            <v-btn class="w-100 mt-3 text-black rounded-lg elevation-0" variant="outlined" :ripple="false">
+              Заказать
+            </v-btn>
           </div>
         </v-card>
       </v-col>
