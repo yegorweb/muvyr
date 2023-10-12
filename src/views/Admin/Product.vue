@@ -49,6 +49,15 @@ let productRequests = ref([
         <v-col cols="12">
             Журнал заказов молочной продукции
         </v-col>
+    </v-row>
+    <v-row>
+        <v-col cols="12">
+            <v-btn to="/admin/product-form">
+                + добавить
+            </v-btn>
+        </v-col>
+    </v-row>
+    <v-row>
         <v-col cols="12">
             <v-table>
                 <thead>
@@ -93,13 +102,6 @@ let productRequests = ref([
                     </tr>
                 </tbody>
             </v-table>
-        </v-col>
-    </v-row>
-    <v-row>
-        <v-col cols="12">
-            <v-btn to="/admin/product-form">
-                + добавить
-            </v-btn>
         </v-col>
     </v-row>
 </template>

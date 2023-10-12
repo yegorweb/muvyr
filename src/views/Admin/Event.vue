@@ -26,37 +26,46 @@ let list = ref([{
 },])
 </script>
 <template>
-    <v-table>
-        <thead>
-            <tr>
-                <th class="text-left">
-                    Дата Мероприятия
-                </th>
-                <th class="text-left">
-                    Название
-                </th>
-                <th class="text-left">
-                    Тип мероприятия
-                </th>
-                <th class="text-left">
-                    Организатор
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="item in list">
-                <td>{{ item.data }}</td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.eventType }}</td>
-                <td>{{ item.organizer }}</td>
-            </tr>
-        </tbody>
-    </v-table>
     <v-row>
-        <v-col cols="12" class="mt-3">
+        <v-col cols="12">
+            Журнал мероприятий
+        </v-col>
+        <v-col cols="12">
             <v-btn to="/admin/product-form">
-                создать мероприятие
+                + добавить
             </v-btn>
+        </v-col>
+    </v-row>
+    <v-row>
+        <v-col cols="12">
+
+            <v-table>
+                <thead>
+                    <tr>
+                        <th class="text-left">
+                            Дата Мероприятия
+                        </th>
+                        <th class="text-left">
+                            Название
+                        </th>
+                        <th class="text-left">
+                            Тип мероприятия
+                        </th>
+                        <th class="text-left">
+                            Организатор
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in list">
+                        <td>{{ item.data }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.eventType }}</td>
+                        <td>{{ item.organizer }}</td>
+                    </tr>
+                </tbody>
+            </v-table>
+
         </v-col>
     </v-row>
 </template>

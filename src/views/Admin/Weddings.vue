@@ -23,37 +23,44 @@ let weddingRequests = ref([
 ])
 </script>
 <template>
-    <v-table>
-        <thead>
-            <tr>
-                <th class="text-left">
-                    Дата Мероприятия
-                </th>
-                <th class="text-left">
-                    Событие
-                </th>
-                <th class="text-left">
-                    Email
-                </th>
-                <th class="text-left">
-                    Телефон
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="item in weddingRequests">
-                <td>{{ item.date }}</td>
-                <td>{{ item.event }}</td>
-                <td>{{ item.email }}</td>
-                <td>{{ item.phone }}</td>
-            </tr>
-        </tbody>
-    </v-table>
     <v-row>
-        <v-col cols="12" class="mt-3">
+        <v-col cols="12">
+            Журнал свадеб
+        </v-col>
+        <v-col cols="12">
             <v-btn to="/admin/product-form">
-                создать мероприятие
+                + добавить
             </v-btn>
+        </v-col>
+    </v-row>
+    <v-row>
+        <v-col cols="12">
+            <v-table>
+                <thead>
+                    <tr>
+                        <th class="text-left">
+                            Дата Мероприятия
+                        </th>
+                        <th class="text-left">
+                            Событие
+                        </th>
+                        <th class="text-left">
+                            Email
+                        </th>
+                        <th class="text-left">
+                            Телефон
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in weddingRequests">
+                        <td>{{ item.date }}</td>
+                        <td>{{ item.event }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.phone }}</td>
+                    </tr>
+                </tbody>
+            </v-table>
         </v-col>
     </v-row>
 </template>

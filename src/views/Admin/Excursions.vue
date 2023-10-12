@@ -38,6 +38,9 @@ let excursions = ref([{
 <template>
     <v-row>
         <v-col cols="12">
+            Журнал экскурсий
+        </v-col>
+        <v-col cols="12">
             <v-btn>
                 + добавить
             </v-btn>
