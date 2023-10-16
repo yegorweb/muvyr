@@ -10,10 +10,10 @@ let router = useRouter()
 
 <template>
   <div class="wrapper">
-    <video autoplay muted loop preload="none" id="myVideo" controls="false" playsinline>
+    <!-- <video autoplay muted loop preload="none" id="myVideo" controls="false" playsinline>
       <source src="https://storage.yandexcloud.net/goroda-img/temp-plakat-city/video.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
-    </video>
+    </video> -->
 
     <v-container style="position: absolute; bottom: 0; left: 0; top: 0; right: 0;">
       <div class="w-100 h-100 d-flex flex-column justify-space-between align-start" style="gap: 18px;">
@@ -51,9 +51,10 @@ let router = useRouter()
 .wrapper {
   width: 100vw;
   height: calc(100dvh - 60px);
-  background: url(/startImg.webp) 50% top 80px no-repeat;
+  background: url(../assets/startImg.webp);
   background-size: cover;
   position: relative;
+ 
 }
 .list {
   margin-bottom: 20px;
@@ -85,12 +86,12 @@ let router = useRouter()
   color: #FFFFFF;
   text-align: center;
 }
-#myVideo {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%; 
-  min-height: 100%;
-}
+// #myVideo {
+//   position: fixed;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   min-width: 100%; 
+//   min-height: 100%;
+// }
 </style>

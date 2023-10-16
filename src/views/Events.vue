@@ -91,13 +91,13 @@ let events = ref([
       </v-col>
     </v-row>
     <v-row class="d-flex justify-center">
-      <v-col cols="10" lg="8" v-for="event of events">
-        <v-card class="h-100 d-flex flex-column">
+      <v-col cols="12" v-for="event of events">
+        <v-card class="d-flex flex-column pa-4">
           <v-row>
-            <v-col cols="12" md="6" lg="4">
-              <v-img style="border-radius: 0 0 12px 0;" :src="event.image"></v-img>
+            <v-col cols="12" md="6" >
+              <v-img style="border-radius: 0 0 12px 0;" :src="event.image" class="h-80"></v-img>
             </v-col>
-            <v-col cols="12" md="6" lg="8">
+            <v-col cols="12" md="6" >
               <div class="pa-4">
                 <h2>{{ event.title }}</h2>
                 <div class="">Тип события: {{ event.eventType }}</div>

@@ -12,7 +12,7 @@ await useProperty().getAllProperty()
   <v-app>
     <Header />
 
-    <v-main style="padding-bottom: 80px;">
+    <v-main style="padding-bottom: 0px;">
       <router-view v-slot="{ Component }">
         <transition name="fade" :duration="{ enter: 200, leave: 100 }">
           <component :is="Component" />
