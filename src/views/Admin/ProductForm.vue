@@ -63,63 +63,63 @@ async function submit() {
 </script>
 <template>
     <v-container>
-        <v-row>
-            <v-col cols="12">
-                Название
-                <v-text-field v-model="form.title"></v-text-field>
-            </v-col>
-        </v-row>
-        <v-row class="d-flex">
-            <v-col cols="12">
-                Описание
-                <v-textarea v-model="form.description"></v-textarea>
-            </v-col>
-        </v-row>
-        <v-row class="d-flex">
-            <v-col cols="6">
-                Масса/Объём
-                <v-text-field v-model="form.mass"></v-text-field>
-            </v-col>
-            <v-col cols="6">
-                Цена
-                <v-text-field v-model="form.price"></v-text-field>
-            </v-col>
-        </v-row>
-        <v-row class="d-flex">
-            <v-col cols="12" md="4">
-                <v-btn v-if="previews.length < 1"> добавить фото
-                    <v-dialog v-model="visibleCropperModal" activator="parent">
-                        <v-row class="justify-center">
-                            <v-col cols="12" md="8" lg="6">
-                                <v-card class="pa-4 rounded-lg">
-                                    <ImageCropper @addImage="addPreview" />
+        <v-row class="justify-center">
+            <v-col cols="12" sm="6">
+                <v-row>
+                    <v-col cols="12">
+                        Название
+                        <v-text-field v-model="form.title"></v-text-field>
+                    </v-col>
 
-                                    <v-card-actions>
-                                        <v-btn @click="visibleCropperModal = false" color="error" class="ml-auto">
-                                            закрыть
-                                        </v-btn>
-                                    </v-card-actions>
-                                </v-card>
-                            </v-col>
-                        </v-row>
-                    </v-dialog>
-                </v-btn>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col v-for="preview in previews" class="d-flex" cols="12" sm="6" md="4">
-                <v-img :src="preview" width="200" class="my-2">
-                    <v-overlay :open-on-click="true" contained class="align-center justify-center" activator="parent">
-                        <v-btn color="error" @click="deletePreview(preview)" icon>
-                            <span class="mdi mdi-delete"></span>
+                    <v-col cols="12">
+                        Описание
+                        <v-textarea v-model="form.description"></v-textarea>
+                    </v-col>
+
+                    <v-col cols="6">
+                        Масса/Объём
+                        <v-text-field v-model="form.mass"></v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                        Цена
+                        <v-text-field v-model="form.price"></v-text-field>
+                    </v-col>
+
+                    <v-col cols="12" md="4">
+                        <v-btn v-if="previews.length < 1"> добавить фото
+                            <v-dialog v-model="visibleCropperModal" activator="parent">
+                                <v-row class="justify-center">
+                                    <v-col cols="12" md="8" lg="6">
+                                        <v-card class="pa-4 rounded-lg">
+                                            <ImageCropper @addImage="addPreview" />
+
+                                            <v-card-actions>
+                                                <v-btn @click="visibleCropperModal = false" color="error" class="ml-auto">
+                                                    закрыть
+                                                </v-btn>
+                                            </v-card-actions>
+                                        </v-card>
+                                    </v-col>
+                                </v-row>
+                            </v-dialog>
                         </v-btn>
-                    </v-overlay>
-                </v-img>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols="12" class="d-flex justify-center">
-                <v-btn @click="submit">отправить</v-btn>
+                    </v-col>
+
+                    <v-col v-for="preview in previews" class="d-flex" cols="12" sm="6" md="4">
+                        <v-img :src="preview" width="200" class="my-2">
+                            <v-overlay :open-on-click="true" contained class="align-center justify-center"
+                                activator="parent">
+                                <v-btn color="error" @click="deletePreview(preview)" icon>
+                                    <span class="mdi mdi-delete"></span>
+                                </v-btn>
+                            </v-overlay>
+                        </v-img>
+                    </v-col>
+
+                    <v-col cols="12" class="d-flex justify-center">
+                        <v-btn @click="submit">отправить</v-btn>
+                    </v-col>
+                </v-row>
             </v-col>
         </v-row>
     </v-container>

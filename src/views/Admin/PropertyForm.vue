@@ -87,71 +87,72 @@ async function submit() {
 </script>
 <template>
     <v-container>
-        <v-row>
-            <v-col cols="12">
-                Название
-                <v-text-field v-model="form.title"></v-text-field>
-            </v-col>
-        </v-row>
-        <v-row class="d-flex">
-            <v-col cols="12">
-                Описание
-                <QuillEditor theme="snow" ref="quill" contentType="html" v-model:content="form.description" :toolbar="[
-                    ['bold', 'italic', 'underline'],
-                    [{ list: 'ordered' }, { list: 'bullet' }],
-                    [{ color: ['#000000', '#ED413E'] }],
-                    [{ align: [] }],
-                ]" :options="options">
+        <v-row class="justify-center">
+            <v-col cols="12" sm="6">
+                <v-row>
+                    <v-col cols="12">
+                        Название
+                        <v-text-field v-model="form.title"></v-text-field>
+                    </v-col>
 
-                </QuillEditor>
-            </v-col>
-        </v-row>
-        <v-row class="d-flex">
-            <v-col cols="6">
-                Количество человек
-                <v-text-field v-model="form.peopleCount"></v-text-field>
-            </v-col>
-            <v-col cols="6">
-                Цена
-                <v-text-field v-model="form.price"></v-text-field>
-            </v-col>
-        </v-row>
-        <v-row class="d-flex">
-            <v-col cols="12" md="4">
-                <v-btn> добавить фото
-                    <v-dialog v-model="visibleCropperModal" activator="parent">
-                        <v-row class="justify-center">
-                            <v-col cols="12" md="8" lg="6">
-                                <v-card class="pa-4 rounded-lg">
-                                    <ImageCropper @addImage="addPreview" />
+                    <v-col cols="12">
+                        Описание
+                        <QuillEditor theme="snow" ref="quill" contentType="html" v-model:content="form.description"
+                            :toolbar="[
+                                ['bold', 'italic', 'underline'],
+                                [{ list: 'ordered' }, { list: 'bullet' }],
+                                [{ color: ['#000000', '#ED413E'] }],
+                                [{ align: [] }],
+                            ]" :options="options">
 
-                                    <v-card-actions>
-                                        <v-btn @click="visibleCropperModal = false" color="error" class="ml-auto">
-                                            закрыть
-                                        </v-btn>
-                                    </v-card-actions>
-                                </v-card>
-                            </v-col>
-                        </v-row>
-                    </v-dialog>
-                </v-btn>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col v-for="preview in previews" class="d-flex" cols="12" sm="6" md="4">
-                <v-img :src="preview" width="200" class="my-2">
-                    <v-overlay :open-on-click="true" contained class="align-center justify-center" activator="parent">
-                        <v-btn color="error" @click="deletePreview(preview)" icon>
-                            <span class="mdi mdi-delete"></span>
+                        </QuillEditor>
+                    </v-col>
+
+                    <v-col cols="6">
+                        Количество человек
+                        <v-text-field v-model="form.peopleCount"></v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                        Цена
+                        <v-text-field v-model="form.price"></v-text-field>
+                    </v-col>
+
+                    <v-col cols="12" md="4">
+                        <v-btn> добавить фото
+                            <v-dialog v-model="visibleCropperModal" activator="parent">
+                                <v-row class="justify-center">
+                                    <v-col cols="12" md="8" lg="6">
+                                        <v-card class="pa-4 rounded-lg">
+                                            <ImageCropper @addImage="addPreview" />
+
+                                            <v-card-actions>
+                                                <v-btn @click="visibleCropperModal = false" color="error" class="ml-auto">
+                                                    закрыть
+                                                </v-btn>
+                                            </v-card-actions>
+                                        </v-card>
+                                    </v-col>
+                                </v-row>
+                            </v-dialog>
                         </v-btn>
-                    </v-overlay>
-                </v-img>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols="12" class="d-flex justify-center">
-                <v-btn @click="submit">отправить</v-btn>
+                    </v-col>
+
+                    <v-col v-for="preview in previews" class="d-flex" cols="12" sm="6" md="4">
+                        <v-img :src="preview" width="200" class="my-2">
+                            <v-overlay :open-on-click="true" contained class="align-center justify-center"
+                                activator="parent">
+                                <v-btn color="error" @click="deletePreview(preview)" icon>
+                                    <span class="mdi mdi-delete"></span>
+                                </v-btn>
+                            </v-overlay>
+                        </v-img>
+                    </v-col>
+
+                    <v-col cols="12" class="d-flex justify-center">
+                        <v-btn @click="submit">отправить</v-btn>
+                    </v-col>
+                </v-row>
             </v-col>
         </v-row>
     </v-container>
-</template>
+    </template>
